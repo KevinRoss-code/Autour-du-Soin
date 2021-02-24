@@ -387,6 +387,14 @@ template {
     text-decoration: underline #d5f5e3;
   }
 }
+@media (min-width: 1000px){
+  img{
+    width: 35%;
+    height: 35%;
+    margin-left: 33%;
+    margin-right: 33%;
+  }
+}
 /*body{
     display: grid;
     grid-template-rows: auto;
