@@ -362,38 +362,65 @@ template {
     margin-left: 20%;
     margin-right: 20%;
   }
-  #logo{
-    background:  -webkit-linear-gradient(top,  #d5f5e3 , #82e0aa , #eea4e7, #f8cdf4 );
-    background:  -o-linear-gradient(top,  #d5f5e3 , #82e0aa , #eea4e7, #f8cdf4 );
-    background:  -moz-linear-gradient(top, #d5f5e3 , #82e0aa , #eea4e7, #f8cdf4 );
-    background:  linear-gradient(top, #d5f5e3 , #82e0aa , #eea4e7, #f8cdf4 );
+  body{
+    background:  -webkit-linear-gradient(top, #f0ccec, #f8cdf4, #f8cdf4, #f5eef8  );
+    background:  -o-linear-gradient(top , #f0ccec, #f8cdf4, #f8cdf4,   #f5eef8 );
+    background:  -moz-linear-gradient(top , #f0ccec,#f8cdf4, #f8cdf4,   #f5eef8 );
+    background:  linear-gradient(top, #f0ccec,#f8cdf4, #f8cdf4,   #f5eef8 );
   }
   #presentationMassage p{
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: justify;
     margin: 2%;
+    text-indent: 4rem;
   }
   #presentationMassage h2{
     text-align: center;
     text-decoration: underline #f8cdf4;
   }
-  #presentationPersonnel p{
-    font-size: 1rem;
+  #presentationPersonnel ul{
+    font-size: 1.2rem;
     text-align: justify;
     margin: 2%;
+    text-indent: 4rem;
   }
+  
   #presentationPersonnel h2{
     text-align: center;
     text-decoration: underline #d5f5e3;
   }
+  #presentationPersonnel img{
+    width: 20%;
+    height: 20%;
+  }
 }
 @media (min-width: 1000px){
+  h1{
+    text-align: left;
+    margin-left: 5%;
+  }
   img{
     width: 35%;
     height: 35%;
     margin-left: 33%;
     margin-right: 33%;
   }
+  #paragrapheMassage{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    
+  }
+  .photo{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5%;
+  } 
+  #presentationPersonnel img {
+    display: flex;
+    justify-content: center;
+    padding-left: 7%;
+  };
 }
 /*body{
     display: grid;

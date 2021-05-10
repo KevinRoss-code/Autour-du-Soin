@@ -348,9 +348,64 @@ template {
   display: none;
 }
 /*============================Début du code=======================================*/
-table{
-   border-collapse: collapse;
+@media (min-width: 300px) {
+  h1{
+    text-align: left;
+  }
+  h2{
+    text-align: center;
+  }
+  #nav{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 1.7rem;
+  }
+  body{
+    background:  -webkit-linear-gradient(top, #f0ccec, #f8cdf4, #f8cdf4, #f5eef8  );
+    background:  -o-linear-gradient(top , #f0ccec, #f8cdf4, #f8cdf4,   #f5eef8 );
+    background:  -moz-linear-gradient(top , #f0ccec,#f8cdf4, #f8cdf4,   #f5eef8 );
+    background:  linear-gradient(top, #f0ccec,#f8cdf4, #f8cdf4,   #f5eef8 );
+  }
 }
-td, th{
-    border: 1px solid black;
+@media (min-width: 1000px){
+h1{
+  margin-left: 5%;
+}
+#californien img {
+  width: 20%;
+  margin-left: 5%;
+}
+#californien {
+  display: flex;
+  justify-content: space-around;
+}
+#californien p{
+  width: 30%;
+  
+}
+.paracali{
+  margin-left: -20%;
+}
+#cranien img {
+  width: 30%;
+  height: 60%;
+   margin-left: 16%; 
+   image-orientation: -90deg;
+}
+#cranien {
+  display: flex;
+  justify-content: space-around;
+}
+#cranien h3{
+  padding-left: 10%;
+  width: 50%;
+}
+.paracranien{
+  margin-left: 5%;
+}
+p{
+  font-size: 1.2rem;
+}
 }
