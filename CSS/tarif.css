@@ -354,7 +354,7 @@ template {
     justify-content: center;
     margin-top: 2%;
     margin-bottom: 2%;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
   }
   body{
     background:  -webkit-linear-gradient(top, #f0ccec,  #f5eef8  );
@@ -362,26 +362,36 @@ template {
     background:  -moz-linear-gradient(top , #f0ccec,  #f5eef8 );
     background:  linear-gradient(top, #f0ccec,  #f5eef8 );
   }
-}
-@media (min-width: 1000px){
   h1{
-    margin-left: 10%;
+   margin-left: 5%;
+   padding: 1%;
   }
   h2{
-    margin-left: 5%
+    margin-left: 15%;
+    padding: 1%;
   }
-  p{
-    font-size: 1.3rem
+  .nom{
+    margin-left: 5%;
   }
   img{
-    width: 20%;
+    width: 50%;
+    margin-left: 25%;
   }
-  #tarif1{
-    display: flex;
-    justify-content: space-around;
-     margin: 20%; 
-    line-height: 200%;
+}
+@media (min-width: 600px){
+  #nav{
+    font-size: 1.7rem;
   }
- 
-  
+  p{
+    font-size: 1.3rem;
+    text-align: center;
+  }
+}
+@media (min-width: 1000px){
+  #nav{
+    font-size: 2rem;
+  }
+  img{
+    width: 70%;
+  }
 }

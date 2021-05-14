@@ -354,7 +354,7 @@ template {
     justify-content: space-around;
     margin-top: 2%;
     margin-bottom: 2%;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
   }
   img{
     width: 55%;
@@ -368,200 +368,54 @@ template {
     background:  -moz-linear-gradient(top , #f0ccec,#f8cdf4, #f8cdf4,   #f5eef8 );
     background:  linear-gradient(top, #f0ccec,#f8cdf4, #f8cdf4,   #f5eef8 );
   }
-  #presentationMassage p{
-    font-size: 1.2rem;
-    text-align: justify;
-    margin: 2%;
-    text-indent: 4rem;
-  }
-  #presentationMassage h2{
+  h1{
     text-align: center;
-    text-decoration: underline #f8cdf4;
   }
-  #presentationPersonnel ul{
-    font-size: 1.2rem;
-    text-align: justify;
-    margin: 2%;
-    text-indent: 4rem;
-  }
-  
-  #presentationPersonnel h2{
-    text-align: center;
-    text-decoration: underline #d5f5e3;
-  }
-  #presentationPersonnel img{
-    width: 20%;
-    height: 20%;
+}
+@media (min-width: 600px){
+#nav{
+  font-size: 1.6rem;
+}
+img{
+  padding: 2%;
+}
+}
+@media (min-width: 800px){
+  #nav{
+    font-size: 1.8rem;
   }
 }
 @media (min-width: 1000px){
+  #nav{
+    font-size: 2rem;
+  }
+  #logo{
+    width: 65%;
+    margin-left: 19%;
+  }
   h1{
     text-align: left;
-    margin-left: 5%;
+    margin-left: 10%;
   }
-  img{
-    width: 35%;
-    height: 35%;
-    margin-left: 33%;
-    margin-right: 33%;
+  .photozen{
+    width: 65%;
+    margin-left: 20%;
+    padding: 2%;
   }
-  #paragrapheMassage{
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    
+  p{
+    font-size: 1.3rem;
   }
-  .photo{
-    width: 100%;
-    height: 100%;
-    margin-bottom: 5%;
-  } 
-  #presentationPersonnel img {
-    display: flex;
-    justify-content: center;
-    padding-left: 7%;
-  };
-}
-/*body{
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-areas: 
-        "header header"
-        "sidebar sidebar"
-        "section section"
-        "footer footer";
-    /background:  -webkit-linear-gradient(top, #00796B, #009688, #4DB6AC, #B2DFDB);
-    background:  -o-linear-gradient(top, #00796B, #009688, #4DB6AC, #B2DFDB);
-    background:  -moz-linear-gradient(top, #00796B, #009688, #4DB6AC, #B2DFDB);
-    background:  linear-gradient(top, #00796B, #009688, #4DB6AC, #B2DFDB);
-}
-header{
-    grid-area: header;
-}
-sidebar{
-    grid-area: sidebar;
-}
-section{
-    grid-area: section;
-}
-footer{
-    grid-area: footer;
-}
-.image{
-    border: 1px solid black;
-    width: 50%;
+  #separateur{
+    border: 5px solid rgb(202, 102, 118);
+    margin: 5%;
+  }
+  #presentationPersonnel img{
+    width: 30%;
+    margin-left: 35%;
+  }
+  li{
+    font-size: 1.3rem;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin-right: 2%;
+  }
 }
-h1{
-    text-align: center;
-}
-*/
-/*===========================Calendrier==================================*/
-/*.calendar
-{
-    background:#fff;
-    border-radius:4px;
-    color:#222629;
-    overflow:hidden;
-    width: ;
-}
-
-.calendar .header
-{
-    background:#ddd;
-    height:40px;
-    line-height:40px;
-    text-align:center;
-}
-
-.calendar .month
-{
-    display:inline-block;
-    font-weight:bold;
-}
-
-.calendar button
-{
-    background:none;
-    color:inherit;
-    cursor:pointer;
-    font-family:Consolas;
-    font-size:1.75rem;
-    height:100%;
-    padding:0 15px;
-}
-
-.calendar button:hover
-{
-    color:#009FB7;
-}
-
-.calendar button:first-child
-{
-    float:left;
-}
-
-.calendar button:last-child
-{
-    float:right;
-}
-
-.calendar .cell
-{
-    background:#fff;
-    color:#5d5d5d;
-    box-sizing:border-box;
-    display:inline-block;
-    padding:10px 0;
-    text-align:center;
-    width:calc(100% / 7);
-}
-
-.calendar .day
-{
-    font-size:.8rem;
-    padding:8px 0;
-}
-
-.calendar .day, .calendar .today
-{
-    background:#009FB7;
-    color:#fff;
-}*/
-/*=================600px==========*/
-/*@media (min-width: 800px){
-    body{
-    display: grid;
-    grid-template-columns: 3fr 7fr;
-    grid-template-rows: auto;
-    grid-template-areas: 
-        "header header"
-        "sidebar section"
-        "footer footer";
-}
-header{
-    grid-area: header;
-}
-sidebar{
-    grid-area: sidebar;
-}
-section{
-    grid-area: section;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    
-}
-footer{
-    grid-area: footer;
-}
-    .coordonnees{
-         display: flex;
-    flex-direction: row;
-        justify-content: space-between;
-        
-    }
-
-}*/
