@@ -388,10 +388,35 @@ template {
   }
 }
 @media (min-width: 1000px){
+  body{
+    width: 99%;
+  }
   #nav{
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   img{
     width: 70%;
+  }
+  #tarif1{
+    border: 1px solid black;
+    padding: 2%;
+    border-radius: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+  }
+  #tarif2{
+    border: 1px solid black;
+    padding: 2%;
+    border-radius: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2%;
+  }
+  p{
+    font-size: 1.7rem;
+  }
+  .photo{
+    padding-top: 2%;
   }
 }

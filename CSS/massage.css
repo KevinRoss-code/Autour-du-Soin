@@ -376,6 +376,41 @@ template {
     width: 50%;
     margin-left: 25%;
   }
+  .time1{
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 5%;
+  }
+  .time2{
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 5%;
+  }
+  .time3{
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 5%;
+  }
+  .time4{
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 5%;
+  }
+  .time5{
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 5%;
+  }
+  .time6{
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 5%;
+  }
+  .time7{
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 5%;
+  }
 }
 @media (min-width: 600px){
   #nav{
@@ -397,31 +432,38 @@ template {
     text-align: center;
   }
   p{
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
   img{
     width: 70%;
   }
-  .time1{
+  /* .time1{
     text-align: center;
+    padding-top: 15%;
   }
   .time2{
     text-align: center;
+    padding-top: 15%;
   }
   .time3{
     text-align: center;
+    padding-top: 15%;
   }
   .time4{
     text-align: center;
+    padding-top: 15%;
   }
   .time5{
     text-align: center;
+    padding-top: 15%;
   }
   .time6{
     text-align: center;
+    padding-top: 15%;
   }
   .time7{
     text-align: center;
-  }
+    padding-top: 15%;
+  } */
 
 }

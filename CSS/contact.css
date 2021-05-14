@@ -354,7 +354,6 @@
       justify-content: center;
       margin-top: 2%;
       margin-bottom: 2%;
-      font-size: 1.7rem;
     }
     body{
       background:  -webkit-linear-gradient(top, #f0ccec,  #f5eef8  );
@@ -362,14 +361,25 @@
       background:  -moz-linear-gradient(top , #f0ccec,  #f5eef8 );
       background:  linear-gradient(top, #f0ccec,  #f5eef8 );
     }
+    img{
+      width: 70%;
+      margin-left: 15%;
+    }
     p{
-        font-size: 1.5rem;
+        font-size: 1rem;
         text-align: center;
     }
   }
   @media (min-width: 1000px){
-      img{
+    #nav{
+      font-size: 2rem;
+    }  
+    img{
           width: 30%;
           margin-left: 35%;
+          padding: 1%;
+      }
+      p{
+        font-size: 1.5rem;
       }
   }
