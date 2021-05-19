@@ -357,9 +357,9 @@ template {
     font-size: 1.2rem;
   }
   body{
-    background:  -webkit-linear-gradient(top, #f0ccec,  #f5eef8  );
+    background:  -webkit-linear-gradient(top, #fce7fa,  #ffffff  );
     background:  -o-linear-gradient(top , #f0ccec,   #f5eef8 );
-    background:  -moz-linear-gradient(top , #f0ccec,  #f5eef8 );
+    background:  -moz-linear-gradient(top , #fce7fa,  #f5eef8 );
     background:  linear-gradient(top, #f0ccec,  #f5eef8 );
   }
   h1{
@@ -418,5 +418,8 @@ template {
   }
   .photo{
     padding-top: 2%;
+  }
+  .photoDeco{
+    width: 50%;
   }
 }
