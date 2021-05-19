@@ -365,7 +365,7 @@ template {
   body{
     background:  -webkit-linear-gradient(top, #f0ccec, #f8cdf4, #f8cdf4, #f5eef8  );
     background:  -o-linear-gradient(top , #f0ccec, #f8cdf4, #f8cdf4,   #f5eef8 );
-    background:  -moz-linear-gradient(top , #f0ccec,#f8cdf4, #f8cdf4,   #f5eef8 );
+    background:  -moz-linear-gradient(top , #fce7fa,   #f5eef8 );
     background:  linear-gradient(top, #f0ccec,#f8cdf4, #f8cdf4,   #f5eef8 );
   }
   h1{
@@ -405,9 +405,8 @@ img{
   p{
     font-size: 1.3rem;
   }
-  #separateur{
-    border: 5px solid rgb(202, 102, 118);
-    margin: 5%;
+  .photo{
+    width: 40%;
   }
   #presentationPersonnel img{
     width: 30%;
