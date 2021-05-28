@@ -356,21 +356,36 @@ template {
     margin-bottom: 2%;
     font-size: 1.2rem;
   }
+  footer{
+    text-align: center;
+    padding-bottom: 2%;
+  }
   img{
     width: 55%;
     height: 55%;
     margin-left: 20%;
     margin-right: 20%;
   }
+  a{
+    color: #ec0694;
+  }
+  a:visited{
+    color: #ec0694;
+  }
   body{
-    background:  -webkit-linear-gradient(top, #f0ccec, #f8cdf4, #f8cdf4, #f5eef8  );
-    background:  -o-linear-gradient(top , #f0ccec, #f8cdf4, #f8cdf4,   #f5eef8 );
+    background:  -webkit-linear-gradient(top,  #fce7fa,   #f5eef8 );
+    background:  -o-linear-gradient(top ,  #fce7fa,   #f5eef8 );
     background:  -moz-linear-gradient(top , #fce7fa,   #f5eef8 );
-    background:  linear-gradient(top, #f0ccec,#f8cdf4, #f8cdf4,   #f5eef8 );
+    background:  linear-gradient(top,  #fce7fa,   #f5eef8 );
   }
   h1{
     text-align: center;
   }
+}
+.deco{
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 @media (min-width: 600px){
 #nav{
@@ -416,5 +431,10 @@ img{
     font-size: 1.3rem;
     text-align: center;
     margin-right: 2%;
+  }
+  .deco{
+    margin-left: 37%; 
+    margin-right: 45%;
+    width: 30%;
   }
 }

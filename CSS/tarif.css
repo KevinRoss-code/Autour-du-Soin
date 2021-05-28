@@ -356,11 +356,21 @@ template {
     margin-bottom: 2%;
     font-size: 1.2rem;
   }
+  footer{
+    text-align: center;
+    padding-bottom: 2%;
+  }
+  a{
+    color: #ec0694;
+  }
+  a:visited{
+    color: #ec0694;
+  }
   body{
-    background:  -webkit-linear-gradient(top, #fce7fa,  #ffffff  );
-    background:  -o-linear-gradient(top , #f0ccec,   #f5eef8 );
-    background:  -moz-linear-gradient(top , #fce7fa,  #f5eef8 );
-    background:  linear-gradient(top, #f0ccec,  #f5eef8 );
+    background:  -webkit-linear-gradient(top,  #fce7fa,   #f5eef8 );
+    background:  -o-linear-gradient(top ,  #fce7fa,   #f5eef8 );
+    background:  -moz-linear-gradient(top , #fce7fa,   #f5eef8 );
+    background:  linear-gradient(top,  #fce7fa,   #f5eef8 );
   }
   h1{
    margin-left: 5%;
@@ -377,6 +387,14 @@ template {
     width: 50%;
     margin-left: 25%;
   }
+  #reduction p {
+    text-align: center;
+  }
+  .carte{
+    width: 50%;
+    margin-left: 20%;
+    padding: 1%;
+  }
 }
 @media (min-width: 600px){
   #nav{
@@ -386,27 +404,37 @@ template {
     font-size: 1.3rem;
     text-align: center;
   }
+  #reduction p {
+    text-align: center;
+  }
 }
 @media (min-width: 1000px){
   body{
     width: 99%;
   }
   #nav{
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   img{
-    width: 70%;
+    width: 100%;
+    margin-left: 0%;
+    padding-bottom: 2%;
   }
   #tarif1{
-    border: 1px solid black;
+    border: 2px solid rgb(253, 77, 253);
     padding: 2%;
     border-radius: 10%;
     margin-left: 10%;
     margin-right: 10%;
-    
+  }
+  #tarif1 p {
+    padding-top: 7%;
+  }
+  #tarif2 p{
+    padding-top: 7%;
   }
   #tarif2{
-    border: 1px solid black;
+    border: 2px solid rgb(253, 77, 253);
     padding: 2%;
     border-radius: 10%;
     margin-left: 10%;
@@ -414,12 +442,23 @@ template {
     margin-bottom: 2%;
   }
   p{
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
   .photo{
     padding-top: 2%;
   }
   .photoDeco{
     width: 50%;
+  }
+  #reduction p {
+    text-align: center;
+  }
+  #reduction img{
+    width: 40%;
+    margin-left: 80%;
+  }
+  .carte{
+    width: 30%;
+    margin-left: 35%;
   }
 }

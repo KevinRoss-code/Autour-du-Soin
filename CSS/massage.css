@@ -355,11 +355,22 @@ template {
     margin-top: 2%;
     margin-bottom: 2%;
   }
+  footer a{
+    margin-left: 45%;
+    padding-bottom: 2%;
+    font-size: 1rem;
+  }
+  a{
+    color: #ec0694;
+  }
+  a:visited{
+    color: #ec0694;
+  }
   body{
-    background:  -webkit-linear-gradient(top, #f0ccec, #f8cdf4, #f8cdf4, #f5eef8  );
-    background:  -o-linear-gradient(top , #f0ccec, #f8cdf4, #f8cdf4,   #f5eef8 );
-    background:  -moz-linear-gradient(top , #f0ccec,#f8cdf4, #f8cdf4,   #f5eef8 );
-    background:  linear-gradient(top, #f0ccec,#f8cdf4, #f8cdf4,   #f5eef8 );
+    background:  -webkit-linear-gradient(top,  #fce7fa,   #f5eef8 );
+    background:  -o-linear-gradient(top ,  #fce7fa,   #f5eef8 );
+    background:  -moz-linear-gradient(top , #fce7fa,   #f5eef8 );
+    background:  linear-gradient(top,  #fce7fa,   #f5eef8 );
   }
   h2{
     margin-left: 15%;
@@ -424,9 +435,15 @@ template {
   }
 }
 @media (min-width: 1000px){
+  a{
+   font-size: 2.1rem;
+  }
+  body{
+    width: 99%;
+  }
   h1{
     margin-left: 10%;
-    padding: 2%;
+    padding: 4%;
   }
   h2{
     text-align: center;
@@ -437,33 +454,59 @@ template {
   img{
     width: 70%;
   }
-  /* .time1{
-    text-align: center;
-    padding-top: 15%;
+  #surmesure{
+    padding-bottom: 5%;
+  }
+  #thai2{
+    margin-bottom: 5%;
+  }
+  .time1{
+    padding-top: 25%;
+    font-size: 1.5rem;
   }
   .time2{
-    text-align: center;
-    padding-top: 15%;
+    padding-top: 60%;
+    font-size: 1.5rem;
   }
   .time3{
-    text-align: center;
-    padding-top: 15%;
+    padding-top: 60%;
+    font-size: 1.5rem;
   }
   .time4{
-    text-align: center;
-    padding-top: 15%;
+    padding-top: 60%;
+    font-size: 1.5rem;
   }
   .time5{
-    text-align: center;
-    padding-top: 15%;
+    padding-top: 60%;
+    font-size: 1.5rem;
   }
   .time6{
-    text-align: center;
-    padding-top: 15%;
+    padding-top: 60%;
+    font-size: 1.5rem;
   }
   .time7{
-    text-align: center;
-    padding-top: 15%;
-  } */
-
+    padding-top: 60%;
+    font-size: 1.5rem;
+  }
+  .paracali{
+    padding-top: 2%;
+  }
+  .paracrane{
+    padding-top: 7%;
+  }
+  .parasued{
+    padding-top: 9%;
+  }
+  .parasur{
+    padding-top: 11%;
+  }
+  .relax{
+    padding-top: 10%;
+  }
+  .parathai1{
+    padding-top: 9%;
+  }
+  .parathai2{
+    padding-top: 9%;
+  }
 }
