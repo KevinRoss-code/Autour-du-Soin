@@ -390,11 +390,6 @@ template {
   #reduction p {
     text-align: center;
   }
-  .carte{
-    width: 50%;
-    margin-left: 20%;
-    padding: 1%;
-  }
 }
 @media (min-width: 600px){
   #nav{
@@ -456,9 +451,5 @@ template {
   #reduction img{
     width: 40%;
     margin-left: 80%;
-  }
-  .carte{
-    width: 30%;
-    margin-left: 35%;
   }
 }

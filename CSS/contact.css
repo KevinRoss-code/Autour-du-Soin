@@ -379,6 +379,11 @@
         font-size: 1rem;
         text-align: center;
     }
+    .carte{
+      width: 50%;
+      margin-left: 20%;
+      padding: 1%;
+    }
   }
   @media (min-width: 1000px){
     body{
@@ -394,5 +399,14 @@
       }
       p{
         font-size: 1.5rem;
+      }
+      .carte{
+        width: 80%;
+        margin-left: 10%;
+      }
+      .contact{
+        font-size: 1.5rem;
+        text-align: center;
+        padding-bottom: 2%;
       }
   }
