@@ -20,12 +20,12 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.users = require("./user.model.js")(sequelize, Sequelize);
-// db.commentaires = require("./commentaire.model")(sequelize, Sequelize);
+db.commentaires = require("./comment.model")(sequelize, Sequelize);
 
-// db.users.hasMany(db.commentaires, { as: "commentaires"});
-// db.commentaires.belongsTo(db.users, {
-//     foreignKey: "userId",
-//     as: "user",
-// })
+db.users.hasMany(db.commentaires, { as: "commentaires"});
+db.commentaires.belongsTo(db.users, {
+    foreignKey: "userId",
+    as: "user",
+})
 
 module.exports = db;
