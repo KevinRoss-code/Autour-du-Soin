@@ -8,7 +8,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-html {
+ html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -394,10 +394,19 @@ template {
 img{
   padding: 2%;
 }
+#colere{
+  margin-left: 2%;
+}
+.phraseLogo{
+  margin-left: 24%;
+}
 }
 @media (min-width: 800px){
   #nav{
     font-size: 1.8rem;
+  }
+  .phraseLogo{
+    margin-left: 30%;
   }
 }
 @media (min-width: 1000px){
@@ -436,5 +445,12 @@ img{
     margin-left: 37%; 
     margin-right: 45%;
     width: 30%;
+  }
+  #colere{
+    text-align: center;
+    margin-left: 5%;
+  }
+  .phraseLogo{
+    margin-left: 27%;
   }
 }
