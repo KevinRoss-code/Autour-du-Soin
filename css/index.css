@@ -1,0 +1,105 @@
+.bandeau {
+    font-family: Cursive;
+    font-size: 20px;
+    background-color: #ffeeff;
+    padding-right: 2%;
+}
+
+.bandeau a:hover {
+    text-decoration: underline; 
+    text-decoration-color: #ffadb4;
+    color: #ffadb4; 
+}
+
+.bandeau a{
+    color: #ffadb4;
+    text-decoration: none;
+    padding-left: 1%;
+}
+
+#logo{
+    width: 20%;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    padding: 2%;
+    font-family: URW Chancery L, cursive;
+}
+
+.carre-gauche {
+    width: 1000px;
+    height: 150px;
+    background: #ffeeff;
+    margin: 1%;    
+    position: absolute;
+}
+
+#accueil {
+    position: relative;
+    z-index: 1; /* Permet de placer l'article au-dessus du div */
+    padding-left: 10%;
+    margin-top: 5%;
+}
+
+.carre-droit {
+    width: 1000px;
+    height: 150px;
+    background: #ffeeff;
+    margin: 1%;
+    position: absolute;
+    right: 0; /* Place le carré à la droite */
+}
+
+#presentation {
+    position: relative;
+    z-index: 2; /* Place le texte au-dessus du carré */
+    padding-left: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.carre-gauche-2 {
+    width: 1000px;
+    height: 150px;
+    background: #ffeeff;
+    margin: 1%;
+    position: absolute;
+    margin-left: -29%;
+}
+
+#avertissement {
+    position: relative;
+    z-index: 1; /* Permet de placer l'article au-dessus du div */
+    margin-left: -29%;
+    margin-top: 11%;
+}
+
+h3 {
+    text-align: center;
+    text-decoration: underline;
+    padding: 2%;
+    font-family: URW Chancery L, cursive;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    background-color: #ffeeff;
+  }
+
+  .text-container {
+    flex: 1;
+    padding: 20px;
+    margin: -31px;
+    font-family: Arial, sans-serif;
+  }
+
+  .rounded-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: 20px;
+    flex-shrink: 0;
+  }
