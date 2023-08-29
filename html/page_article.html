@@ -95,6 +95,29 @@
 
   <input type="button" value="Ajouter" id="sendHair" />
 </form>
+<br/>
+<h2>Ajouter un partenaires</h2>
+    <form method="post" id="formAddPartenair">
+      <label>Nom :</label>
+      <input type="text" id="namePartenair" name="namePartenair" required /><br /><br />
+
+      <label>Site web :</label>
+      <input type="text" id="siteWeb" name="siteWeb" required /><br /><br />
+
+      <label>adresse :</label>
+      <input
+        type="text"
+        id="adresse"
+        name="adresse"
+        required
+      /><br /><br />
+      <label for="image">Image:</label>
+      <input type="file" name="imagePartenair" id="imagePartenair" accept="image/*" required />
+      <br />
+
+      <input type="button" value="Ajouter" id="sendFormPartenair" />
+    </form>
+  </br>
   </body>
 </html>
 <script src="../js/add_article.js"></script>
@@ -102,3 +125,4 @@
 <script src="../js/add_makeup.js"></script>
 <script src="../js/add_nail.js"></script>
 <script src="../js/add_hair_removal.js"></script>
+<script src="../js/add_partenair.js"></script>

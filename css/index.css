@@ -4,6 +4,9 @@
     background-color: #ffeeff;
     padding-right: 2%;
 }
+p {
+    font-size: 18px;
+}
 
 .bandeau a:hover {
     text-decoration: underline; 
@@ -28,58 +31,31 @@ h1 {
     font-family: URW Chancery L, cursive;
 }
 
-.carre-gauche {
+#gauche{
     width: 1000px;
-    height: 150px;
-    background: #ffeeff;
-    margin: 1%;    
-    position: absolute;
+    height: 180px;
+    background-color: #ffeeff;
+    margin: 1%; 
+    padding: 1%;   
 }
 
-#accueil {
-    position: relative;
-    z-index: 1; /* Permet de placer l'article au-dessus du div */
-    padding-left: 10%;
-    margin-top: 5%;
-}
-
-.carre-droit {
+#droit {
     width: 1000px;
-    height: 150px;
-    background: #ffeeff;
+    height: 180px;
+    background-color: #ffeeff;
     margin: 1%;
-    position: absolute;
-    right: 0; /* Place le carré à la droite */
+    float: right;
 }
 
-#presentation {
-    position: relative;
-    z-index: 2; /* Place le texte au-dessus du carré */
-    padding-left: 30%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-
-.carre-gauche-2 {
-    width: 1000px;
-    height: 150px;
-    background: #ffeeff;
-    margin: 1%;
-    position: absolute;
-    margin-left: -29%;
-}
-
-#avertissement {
-    position: relative;
-    z-index: 1; /* Permet de placer l'article au-dessus du div */
-    margin-left: -29%;
-    margin-top: 11%;
+#droit p {
+    margin: 1.5%;
 }
 
 h3 {
     text-align: center;
     text-decoration: underline;
     padding: 2%;
+    padding-top: 14%;
     font-family: URW Chancery L, cursive;
 }
 
@@ -87,6 +63,7 @@ h3 {
     display: flex;
     align-items: center;
     background-color: #ffeeff;
+    width: 100%;
   }
 
   .text-container {
@@ -103,3 +80,7 @@ h3 {
     margin: 20px;
     flex-shrink: 0;
   }
+
+#propos{
+    background-color: #ffeeff;
+}
