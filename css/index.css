@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,200&family=Lobster&family=Neuton:ital,wght@0,300;0,400;1,400&display=swap');
+
 .bandeau {
     font-family: Cursive;
     font-size: 20px;
     background-color: #ffeeff;
     padding-right: 2%;
 }
+
+#header{
+    background-color: #ffeeff;
+}
+
 p {
     font-size: 18px;
 }
@@ -29,40 +36,65 @@ h1 {
     text-decoration: underline;
     padding: 2%;
     font-family: URW Chancery L, cursive;
+    font-style: italic;
+    color: #669b37;
+    font-family: 'Lobster', cursive;
 }
 
 #gauche{
     width: 1000px;
     height: 180px;
-    background-color: #ffeeff;
+    background-color: #e8fcd7;
     margin: 1%; 
     padding: 1%;   
+}
+
+#gauche p{
+    font-family: 'Neuton', serif;
+    font-size: 20px;
+}
+
+#gauche img{
+    width: 100px;
 }
 
 #droit {
     width: 1000px;
     height: 180px;
-    background-color: #ffeeff;
+    background-color: #e8fcd7;
     margin: 1%;
     float: right;
 }
 
-#droit p {
-    margin: 1.5%;
+#droit img{
+    width: 100px;
 }
 
-h3 {
+#droit p {
+    margin: 1.5%;
+    font-family: 'Imbue', serif;
+    font-size: 25px;
+}
+
+h2 {
     text-align: center;
     text-decoration: underline;
     padding: 2%;
     padding-top: 14%;
     font-family: URW Chancery L, cursive;
+    font-style: italic;
+    color: #669b37;
+    font-family: 'Lobster', cursive;
+}
+
+#h3Partenair{
+    padding-top: 2%
 }
 
 .container {
     display: flex;
     align-items: center;
-    background-color: #ffeeff;
+    background-color: #e8fcd7;
     width: 100%;
   }
 
@@ -82,5 +114,35 @@ h3 {
   }
 
 #propos{
-    background-color: #ffeeff;
+    background-color: #e8fcd7;
 }
+
+.containerPartenair{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.containerPartenair img {
+    width: 600px;
+    height:400px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.image-title{
+    text-align: center;
+    font-size: 20px;
+    font-family: URW Chancery L, cursive;
+}
+
+.containerPartenair a {
+    text-decoration: none;
+}
+
+/* .scroll-text {
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; 
+}
+   */

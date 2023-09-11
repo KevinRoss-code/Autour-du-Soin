@@ -25,13 +25,17 @@
       src="https://kit.fontawesome.com/c838d79e10.js"
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="./javascript/index.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="http://code.jquery.com/jquery.js"
+      type="text/javascript"
+    ></script>
   </head>
   <body>
     <header>
-      <div class="container text-center">
+      <div class="container" id="header">
         <div class="bandeau">
-          <a href="page_article.html">Les messages</a>
+          <a href="page_article.html">Les massages</a>
           <a href="page_article.html">Les soins du visage</a>
           <a href="page_article.html">Le maquillage</a>
           <img src="../images/logo_accueil.PNG" id="logo" />
@@ -45,7 +49,7 @@
       <h1>Bienvenue dans votre espace bien-être : </br>Les Massages d’Anaëlle</h1>
     </article>
       <article id="gauche">
-        <p>
+        <p class="scroll-text">
           Vous entrez dans un lieu consacré à la détente, au bien-être et au soin,
           ou je suis ravie de prendre soin de vous. <br/>Grâce à mon savoir faire et
           professionnalisme, je vous propose un large choix de prestations qui
@@ -53,9 +57,10 @@
           femmes, alors n’attendez plus et faites vous plaisir.
         </p>
         <p>La beauté et la détente commencent ici.</p>
+        <!-- <img src="../images/floriture.png" alt="Séparation des paragraphes"> -->
       </article>
     <article id="droit">
-      <p>
+      <p class="scroll-text">
         Un massage bien-être c’est quoi ? Cela permet de se détendre et relaxer,
         soulager les tensions musculaires, faciliter la circulation sanguine et
         lymphatique (nouvelle oxygénation des tissus). <br />Aussi il stimule les
@@ -67,12 +72,13 @@
         ⚠️ Le massage bien-être est une prestation non médicale, pour des
         problèmes de santé consulter un spécialiste de santé.
       </p>
+      <!-- <img src="../images/floriture.png" alt="Séparation des paragraphes"> -->
     </article>
-    <h3>À propos :</h3>
+    <h2>À propos :</h2>
     <article id="propos">
       <div class="container">
         <div class="text-container">
-          <p>
+          <p class="scroll-text">
             Après avoir fait un baccalauréat Sciences et Technologies du Sanitaire
             et du Social et des études de biologie je me suis lancer dans le massage
             bien-être. Je souhaitais rester en contact avec les personnes et de
@@ -84,12 +90,16 @@
             d’esthétique pour élargir mes horizons et mes compétences, que j’ai
             obtenu en 2022.
           </p>
+          <!-- <img src="../images/floriture.png" alt="Séparation des paragraphes"> -->
         </div>
           <img class="rounded-image" src="../images/2.jpeg" />
       </div>
     </article>
     <article>
-      <h3>Mes partenaires : </h3>
-    </article>
+      <h2 id="h2Partenair">Mes partenaires : </h2>
+        <div class="containerPartenair"></div>
+      </article>
+    <script src="../js/index.js"></script>
+    <script src="../js/process_show_partenair.js"></script>
   </body>
 </html>
