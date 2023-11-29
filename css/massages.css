@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,200&family=Lobster&family=Neuton:ital,wght@0,300;0,400;1,400&display=swap");
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-family: "Lobster", cursive;
+    text-align: center;
+    font-style: italic;
+    color: #669b37;
+    text-decoration: underline;
+  }
+
+  .name {
+    font-family: "Lobster", cursive;
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-color: #669b37;
+  }
+
+  .image img {
+    height: 200px;
+  }
+
+  .description {
+    font-family: "Neuton", serif;
+    font-size: 18px;
+  }
+
+  .name,
+  .description,
+  .duree,
+  .prix,
+  .image {
+    display: block; /* Affiche les éléments les uns en dessous des autres */
+    margin-bottom: 10px; /* Espacement entre les éléments empilés */
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-family: "Lobster", cursive;
+    text-align: center;
+    font-style: italic;
+    color: #669b37;
+    text-decoration: underline;
+    font-size: 50px !important;
+  }
+
+  .name {
+    font-family: "Lobster", cursive;
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-color: #669b37;
+  }
+
+  .image img {
+    height: 200px;
+  }
+
+  .description {
+    font-family: "Neuton", serif;
+    font-size: 18px;
+  }
+
+  .name,
+  .description,
+  .duree,
+  .prix,
+  .image {
+    display: block; /* Affiche les éléments les uns en dessous des autres */
+    margin-bottom: 10px; /* Espacement entre les éléments empilés */
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-family: "Lobster", cursive;
+    text-align: center;
+    font-style: italic;
+    color: #669b37;
+    text-decoration: underline;
+    font-size: 50px !important;
+  }
+
+  .name {
+    font-family: "Lobster", cursive;
+    font-size: 23px;
+    text-decoration: underline;
+    text-decoration-color: #669b37;
+  }
+
+  .image img {
+    height: 200px;
+  }
+
+  .description {
+    font-family: "Neuton", serif;
+    font-size: 20px;
+  }
+
+  .name,
+  .description,
+  .duree,
+  .prix,
+  .image {
+    display: block; /* Affiche les éléments les uns en dessous des autres */
+    margin-bottom: 10px; /* Espacement entre les éléments empilés */
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 2000px) {
+  /* Styles par défaut pour les articles */
+  /* .article {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  } */
+
+  /* Styles pour les éléments à aligner à gauche */
+  .article.align-left .name,
+  .article.align-left .description,
+  .article.align-left .duree,
+  .article.align-left .prix,
+  .article.align-left .image {
+    text-align: left;
+  }
+
+  /* Styles pour les éléments à aligner à droite */
+  .article.align-right .name,
+  .article.align-right .description,
+  .article.align-right .duree,
+  .article.align-right .prix,
+  .article.align-right .image {
+    text-align: right;
+  }
+
+  .article:nth-child(even) {
+    /* Aligner à droite pour les articles pairs */
+    align-items: flex-end;
+  }
+  .article:nth-child(odd) {
+    /* Aligner à gauche pour les articles impairs */
+    align-items: flex-start;
+  }
+
+  div a {
+    display: inline-block;
+    vertical-align: middle; /* Aligner verticalement par le milieu */
+    color: #ffadb4;
+  }
+
+  #logo {
+    max-width: 200px;
+    height: auto;
+    vertical-align: middle; /* Aligner verticalement par le milieu */
+  }
+
+  h1 {
+    font-family: "Lobster", cursive;
+    text-align: center;
+    font-style: italic;
+    color: #669b37;
+    text-decoration: underline;
+    font-size: 75px !important;
+    display: inline-block;
+    vertical-align: middle; /* Aligner verticalement par le milieu */
+  }
+
+  .align-left {
+    text-align: left;
+  }
+
+  .align-right {
+    text-align: right;
+  }
+
+  /* Style pour chaque élément d'article */
+  /* .article {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  } */
+
+  /* Style pour chaque élément d'article */
+  .name,
+  .description,
+  .duree,
+  .prix,
+  .image {
+    width: 100%; /* Prend 100% de la largeur de l'élément parent */
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* Style pour les images */
+  .image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .name {
+    font-family: "Lobster", cursive;
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-color: #669b37;
+  }
+
+  .image img {
+    height: 200px;
+  }
+
+  .description {
+    font-family: "Neuton", serif;
+    font-size: 18px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  /* Styles pour les éléments à l'intérieur de chaque article */
+  .article .image,
+  .article .duree,
+  .article .prix,
+  .article .description {
+    flex: 1;
+    text-align: center;
+    margin: 0 10px;
+  }
+
+  /* Styles pour les éléments commençant à droite (image, durée, prix, description) */
+  .article.align-right {
+    flex-direction: row-reverse; /* Organiser les éléments de gauche à droite */
+  }
+
+  /* Styles pour les éléments commençant à gauche (description, durée, prix, image) */
+  .article.align-left {
+    flex-direction: row; /* Organiser les éléments de droite à gauche */
+  }
+
+  /*
+.name,
+.description,
+.duree,
+.prix,
+.image {
+  display: block; /* Affiche les éléments les uns en dessous des autres */
+  /* margin-bottom: 10px; /* Espacement entre les éléments empilés */
+  /*text-align: center;*/
+  /*} */
+}

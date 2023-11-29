@@ -1,6 +1,6 @@
 function getArticles() {
   axios
-    .post("../serveur/process_show_article.php")
+    .get("../serveur/process_show_article.php")
     .then((response) => {
       const articles = response.data;
 
@@ -10,29 +10,35 @@ function getArticles() {
       // Clear the content of the articles container before adding new articles
       articlesContainer.innerHTML = "";
 
-      articles.forEach((article) => {
+      articles.forEach((article, index) => {
         // Create elements to display article information
         const articleElement = document.createElement("div");
         articleElement.className = "article row";
 
         const nameElement = document.createElement("div");
-        nameElement.className = "name col-2";
+        nameElement.className = "name";
         nameElement.innerHTML = article.name;
 
         const descElement = document.createElement("div");
-        descElement.className = "description col-3";
+        descElement.className = "description";
         descElement.innerHTML = article.massage_description;
 
         const dureeElement = document.createElement("div");
-        dureeElement.className = "duree col-2";
-        dureeElement.innerHTML = article.duree_massage;
+        dureeElement.className = "duree";
+        dureeElement.innerHTML = article.duree_massage + " min";
 
         const prixElement = document.createElement("div");
-        prixElement.className = "prix col-2";
-        prixElement.innerHTML = article.prix;
+        prixElement.className = "prix";
+        prixElement.innerHTML = article.prix + " €";
 
         const imageDiv = document.createElement("div");
-        imageDiv.className = "image col-3";
+        imageDiv.className = "image";
+
+        if (index % 2 === 0) {
+          articleElement.classList.add("align-right"); // Aligner à droite pour les indices pairs
+        } else {
+          articleElement.classList.add("align-left");
+        }
 
         if (article.image_path) {
           const imageElement = document.createElement("img");
@@ -43,15 +49,23 @@ function getArticles() {
           imageDiv.innerHTML = "No Image Available";
         }
 
+        // Add a class to alternate the alignment based on the index
+        if (index % 2 === 0) {
+          articleElement.classList.add("align-right"); // Align to right for even indices
+        } else {
+          articleElement.classList.add("align-left"); // Align to left for odd indices
+        }
+
         // Append the elements to the article element
         articleElement.appendChild(nameElement);
         articleElement.appendChild(descElement);
         articleElement.appendChild(dureeElement);
         articleElement.appendChild(prixElement);
         articleElement.appendChild(imageDiv);
+        articlesContainer.appendChild(articleElement);
 
         // Append the article element to the articles container
-        articlesContainer.appendChild(articleElement);
+        affichage = articlesContainer.appendChild(articleElement);
       });
     })
     .catch((error) => {

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.2/dist/fullcalendar.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.2/dist/fullcalendar.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Reservation Calendar</title>
+  </head>
+  <body>
+    <div id="calendar"></div>
+    <form style="display: none" id="formResa">
+      <label for="nameResa" id="nameResa">Votre nom :</label>
+      <input type="text" id="inputResa" name="inputResa" />
+      <label for="dayResa" id="dayResa">le jour choisi :</label>
+      <input type="text" id="inputdayResa" name="inputdayResa" />
+      <label for="timeResa" id="timeResa">Votre nom :</label>
+      <input type="text" id="inputTimeResa" name="inputTimeResa" />
+      <button id="sendReservation">Envoyer</button>
+    </form>
+
+    <script>
+      $(document).ready(function () {
+        let formResa = document.getElementById("formResa");
+        $("#calendar").fullCalendar({
+          header: {
+            left: "prev,next today",
+            center: "title",
+            right: "month,agendaWeek,agendaDay",
+          },
+          defaultView: "month",
+          editable: true,
+          eventLimit: true,
+          selectable: true,
+          select: function (start, end, jsEvent, view) {
+            // Gérez l'événement de sélection ici
+            formResa.style.display = "block";
+            if (formResa) {
+              var startTime = moment(start).format("HH:mm"); // Heure de début
+              var endTime = moment(end).format("HH:mm"); // Heure de fin
+              var fullTitle =
+                formResa + " (" + startTime + " - " + endTime + ")";
+              var eventData = {
+                formResa: fullTitle,
+                start: start,
+                end: end,
+              };
+              $("#calendar").fullCalendar("renderEvent", eventData, true);
+            }
+            $("#calendar").fullCalendar("unselect");
+          },
+          events: [
+            {
+              title: "Créneau 1",
+              start: "2023-11-18T10:00:00",
+              end: "2023-11-18T11:00:00",
+            },
+            {
+              title: "Créneau 2",
+              start: "2023-11-18T14:00:00",
+              end: "2023-11-18T15:00:00",
+            },
+          ],
+        });
+      });
+    </script>
+    <script src="../js/add_reservation.js"></script>
+  </body>
+</html>

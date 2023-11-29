@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,200&family=Lobster&family=Neuton:ital,wght@0,300;0,400;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Imbue:opsz,wght@10..100,200&family=Lobster&family=Neuton:ital,wght@0,300;0,400;1,400&display=swap");
+
+@media screen and (max-width: 400px) {
+  a {
+    display: inline-block;
+    vertical-align: middle; /* Aligner verticalement par le milieu */
+    color: #ffadb4;
+  }
+
+  h1 {
+    font-family: "Lobster", cursive;
+    text-align: center;
+    font-style: italic;
+    color: #669b37;
+    text-decoration: underline;
+  }
+
+  .name,
+  .name_care {
+    font-family: "Dancing Script", cursive !important;
+    text-align: center;
+    font-style: italic;
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-color: #669b37;
+  }
+
+  .duree_care {
+    text-align: center;
+  }
+
+  #logo {
+    height: 200px;
+  }
+
+  h2 {
+    font-family: "Lobster", cursive;
+    font-size: 25px;
+    text-decoration: underline;
+    text-decoration-color: #669b37;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  a {
+    display: inline-block;
+    vertical-align: middle; /* Aligner verticalement par le milieu */
+    color: #ffadb4;
+    margin: 3%;
+  }
+
+  #en_tete {
+    margin-left: 15%;
+  }
+
+  h1 {
+    font-family: "Lobster", cursive;
+    text-align: center;
+    font-style: italic;
+    color: #669b37;
+    text-decoration: underline;
+  }
+
+  .name,
+  .name_care {
+    font-family: "Dancing Script", cursive !important;
+    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: #669b37;
+  }
+
+  .name_care {
+    font-size: 24px;
+  }
+
+  .duree_care {
+    text-align: center;
+  }
+
+  #logo {
+    height: 200px;
+  }
+
+  h2 {
+    font-family: "Lobster", cursive;
+    font-size: 25px;
+    text-decoration: underline;
+    text-decoration-color: #669b37;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  a {
+    display: inline-block;
+    vertical-align: middle; /* Aligner verticalement par le milieu */
+    color: #ffadb4;
+    margin: 3%;
+    font-size: 22px;
+  }
+
+  #en_tete {
+    margin-left: 25%;
+  }
+
+  h1 {
+    font-family: "Lobster", cursive;
+    text-align: center;
+    font-style: italic;
+    color: #669b37;
+    text-decoration: underline;
+    font-size: 55px;
+  }
+
+  .name,
+  .name_care {
+    font-family: "Dancing Script", cursive !important;
+    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: #669b37;
+    font-size: 25px;
+  }
+
+  .name_care {
+    font-size: 24px;
+  }
+
+  .duree_care,
+  .duree,
+  .prix {
+    text-align: center;
+  }
+
+  #logo {
+    height: 300px;
+  }
+
+  h2 {
+    font-family: "Lobster", cursive;
+    font-size: 35px;
+    text-decoration: underline;
+    text-decoration-color: #669b37;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 2000px) {
+  a {
+    display: inline-block;
+    vertical-align: middle; /* Aligner verticalement par le milieu */
+    color: #ffadb4;
+    margin: 3%;
+    margin-left: 9%;
+    font-size: 25px;
+  }
+
+  #en_tete {
+    margin-left: 30%;
+  }
+
+  h1 {
+    font-family: "Lobster", cursive;
+    text-align: center;
+    font-style: italic;
+    color: #669b37;
+    text-decoration: underline;
+    font-size: 75px;
+  }
+
+  .name,
+  .name_care {
+    font-family: "Dancing Script", cursive !important;
+    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: #669b37;
+    font-size: 35px;
+  }
+
+  .name_care {
+    font-size: 35px;
+  }
+
+  .duree_care,
+  .duree,
+  .prix {
+    text-align: center;
+    font-size: 28px;
+  }
+
+  #logo {
+    height: 300px;
+  }
+
+  h2 {
+    font-family: "Lobster", cursive;
+    font-size: 45px;
+    text-decoration: underline;
+    text-decoration-color: #669b37;
+    text-align: center;
+  }
+}

@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,200&family=Lobster&family=Neuton:ital,wght@0,300;0,400;1,400&display=swap');
 
+/* faire en sorte quil soit responcive*/
+/* @media screen and (max-width: 35) {
+    body {
+        font-size: 14px;
+    }
+} */
 .bandeau {
     font-family: Cursive;
     font-size: 20px;
