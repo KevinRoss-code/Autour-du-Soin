@@ -1,7 +1,7 @@
 function add_reservation() {
-  let nameOfPerson = document.getElementById("inputResa").value;
-  let dayOfReservation = document.getElementById("inputdayResa").value;
-  let timeOfreservation = document.getElementById("inputTimeResa").value;
+  let nameOfPerson = document.getElementById("selectedName").value;
+  let dayOfReservation = document.getElementById("selectedDate").value;
+  let timeOfreservation = document.getElementById("selectedTime").value;
 
   const formData = new FormData();
   formData.append("persons_name", nameOfPerson);
@@ -23,5 +23,5 @@ function add_reservation() {
     });
 }
 
-const formulaireNail = document.getElementById("sendReservation");
-formulaireNail.addEventListener("click", add_reservation);
+const formulaireResa = document.getElementById("sendReservation");
+formulaireResa.addEventListener("click", add_reservation);

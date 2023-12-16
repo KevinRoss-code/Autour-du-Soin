@@ -16,23 +16,28 @@
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.2/dist/fullcalendar.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/process_show_reservation.js"></script>
     <title>Reservation Calendar</title>
   </head>
   <body>
     <div id="calendar"></div>
-    <form style="display: none" id="formResa">
-      <label for="nameResa" id="nameResa">Votre nom :</label>
-      <input type="text" id="inputResa" name="inputResa" />
-      <label for="dayResa" id="dayResa">le jour choisi :</label>
-      <input type="text" id="inputdayResa" name="inputdayResa" />
-      <label for="timeResa" id="timeResa">Votre nom :</label>
-      <input type="text" id="inputTimeResa" name="inputTimeResa" />
-      <button id="sendReservation">Envoyer</button>
+    <form id="reservationForm">
+      <label for="selecteName">Name :</label>
+      <input type="text" id="selectedName" name="selectedName" required />
+
+      <label for="selectedDate">Selected Date:</label>
+      <input type="text" id="selectedDate" name="selectedDate" required />
+
+      <label for="selectedTime">Selected Time:</label>
+      <input type="text" id="selectedTime" name="selectedTime" required />
+
+      <button type="button" id="sendReservation">Submit Reservation</button>
     </form>
 
     <script>
       $(document).ready(function () {
-        let formResa = document.getElementById("formResa");
+        console.log(showResa());
+        let formResa = document.getElementById("reservationForm");
         $("#calendar").fullCalendar({
           header: {
             left: "prev,next today",
@@ -44,32 +49,25 @@
           eventLimit: true,
           selectable: true,
           select: function (start, end, jsEvent, view) {
-            // Gérez l'événement de sélection ici
             formResa.style.display = "block";
-            if (formResa) {
-              var startTime = moment(start).format("HH:mm"); // Heure de début
-              var endTime = moment(end).format("HH:mm"); // Heure de fin
-              var fullTitle =
-                formResa + " (" + startTime + " - " + endTime + ")";
-              var eventData = {
-                formResa: fullTitle,
-                start: start,
-                end: end,
-              };
-              $("#calendar").fullCalendar("renderEvent", eventData, true);
-            }
-            $("#calendar").fullCalendar("unselect");
+            // Update the form fields with selected date and time
+            $("#selectedDate").val(moment(start).format("YYYY-MM-DD"));
+            $("#selectedTime").val(
+              moment(start).format("HH:mm") +
+                " - " +
+                moment(end).format("HH:mm")
+            );
           },
           events: [
             {
               title: "Créneau 1",
-              start: "2023-11-18T10:00:00",
-              end: "2023-11-18T11:00:00",
+              start: "2023-12-18T10:00:00",
+              end: "2023-12-18T11:00:00",
             },
             {
               title: "Créneau 2",
-              start: "2023-11-18T14:00:00",
-              end: "2023-11-18T15:00:00",
+              start: "2023-12-18T14:00:00",
+              end: "2023-12-18T15:00:00",
             },
           ],
         });
