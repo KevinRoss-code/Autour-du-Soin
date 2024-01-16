@@ -7,22 +7,27 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.2/dist/fullcalendar.min.css"
     />
+    <link type="text/css" rel="stylesheet" href="../css/reservation.css" />
     <link
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.2/dist/fullcalendar.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../js/process_show_reservation.js"></script>
+
     <title>Reservation Calendar</title>
   </head>
   <body>
     <div id="calendar"></div>
     <form id="reservationForm">
-      <label for="selecteName">Name :</label>
+      <!-- <label for="selecteName">Name :</label>
       <input type="text" id="selectedName" name="selectedName" required />
 
       <label for="selectedDate">Selected Date:</label>
@@ -31,14 +36,36 @@
       <label for="selectedTime">Selected Time:</label>
       <input type="text" id="selectedTime" name="selectedTime" required />
 
-      <button type="button" id="sendReservation">Submit Reservation</button>
+      <button type="button" id="sendReservation">Submit Reservation</button> -->
     </form>
+
+    <div id="reservationModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <label for="selecteName">Name :</label>
+        <input type="text" id="selectedName" name="selectedName" required />
+
+        <label for="selectedDate">Selected Date:</label>
+        <input type="text" id="selectedDate" name="selectedDate" required />
+
+        <label for="selectedTime">Selected Time:</label>
+        <input type="text" id="selectedTime" name="selectedTime" required />
+
+        <button type="button" id="sendReservation">Submit Reservation</button>
+        <!-- <h2>Réserver</h2>
+        <p>Date: <span id="modalDate"></span></p>
+        <p>Heure: <span id="modalTime"></span></p>
+        <button onclick="submitReservation()">Confirmer la réservation</button> -->
+      </div>
+    </div>
 
     <script>
       $(document).ready(function () {
-        console.log(showResa());
         let formResa = document.getElementById("reservationForm");
+        let reservationModal = document.getElementById("reservationModal");
+
         $("#calendar").fullCalendar({
+          lang: "fr",
           header: {
             left: "prev,next today",
             center: "title",
@@ -48,31 +75,33 @@
           editable: true,
           eventLimit: true,
           selectable: true,
+          eventRender: function (event, element) {
+            // Vérifier si la date est déjà réservée
+            if (isDateReserved(event.start)) {
+              element.addClass("reserved-event"); // Ajouter une classe pour styliser les événements réservés
+            }
+          },
+          selectConstraint: {
+            reserved: false, // Initialiser à false, et définir à true si la plage horaire est réservée
+          },
           select: function (start, end, jsEvent, view) {
+            if (isDateReserved(start)) {
+              // Annuler la sélection si la date est déjà réservée
+              $("#calendar").fullCalendar("unselect");
+              return;
+            }
+
             formResa.style.display = "block";
+            reservationModal.style.display = "block";
             // Update the form fields with selected date and time
             $("#selectedDate").val(moment(start).format("YYYY-MM-DD"));
-            $("#selectedTime").val(
-              moment(start).format("HH:mm") +
-                " - " +
-                moment(end).format("HH:mm")
-            );
+            $("#selectedTime").val(moment(start).format("HH:mm"));
           },
-          events: [
-            {
-              title: "Créneau 1",
-              start: "2023-12-18T10:00:00",
-              end: "2023-12-18T11:00:00",
-            },
-            {
-              title: "Créneau 2",
-              start: "2023-12-18T14:00:00",
-              end: "2023-12-18T15:00:00",
-            },
-          ],
         });
+        showResa();
       });
     </script>
     <script src="../js/add_reservation.js"></script>
+    <script src="../js/process_show_reservation.js"></script>
   </body>
 </html>

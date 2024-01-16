@@ -1,25 +1,53 @@
+let reservationsData = [];
+
 function showResa() {
-  axios
-    .get("../serveur/process_show_reservation.php")
-    .then((response) => {
-      const reservations = response.data;
-
-      // Convertissez les données de réservation au format attendu par fullCalendar
-      const events = reservations.map((reservation) => {
-        return {
-          title: reservation.title, // Assurez-vous que le nom du champ correspond
-          start: reservation.start, // Assurez-vous que le nom du champ correspond
-          end: reservation.end, // Assurez-vous que le nom du champ correspond
-        };
+  $.ajax({
+    url: "../serveur/process_show_reservation.php",
+    type: "GET",
+    dataType: "json",
+    success: function (reservations) {
+      reservationsData = reservations; // Stocker les réservations dans la variable globale
+      reservations.forEach(function (reservation) {
+        $("#calendar").fullCalendar(
+          "renderEvent",
+          {
+            title: reservation.persons_name,
+            start:
+              reservation.date_of_reservation +
+              "T" +
+              reservation.start_reservation,
+          },
+          true
+        );
       });
-
-      // Mettez à jour les événements du calendrier avec les nouvelles données
-      $("#calendar").fullCalendar("removeEvents"); // Supprimez les événements existants
-      $("#calendar").fullCalendar("addEventSource", events); // Ajoutez les nouveaux événements
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+    },
+    error: function (error) {
+      console.log("Erreur lors de la récupération des réservations:", error);
+    },
+  });
 }
 
-showResa();
+function isDateReserved(date) {
+  return reservationsData.some(function (reservation) {
+    return date.isSame(
+      moment(
+        reservation.date_of_reservation + "T" + reservation.start_reservation
+      )
+    );
+  });
+}
+
+function openModal(date, time) {
+  $("#modalDate").text(date);
+  $("#modalTime").text(time);
+  $(".modal").css("display", "block");
+}
+
+function closeModal() {
+  $(".modal").css("display", "none");
+}
+
+function submitReservation() {
+  // Ajoutez ici le code pour soumettre la réservation
+  closeModal();
+}
