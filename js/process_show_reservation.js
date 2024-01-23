@@ -47,7 +47,34 @@ function closeModal() {
   $(".modal").css("display", "none");
 }
 
-function submitReservation() {
-  // Ajoutez ici le code pour soumettre la réservation
-  closeModal();
+function getReservedTimesForDate(date) {
+  const formattedDate = moment(date).format("YYYY-MM-DD");
+  const reservationsForDate = reservationsData.filter(function (reservation) {
+    return reservation.date_of_reservation === formattedDate;
+  });
+  return reservationsForDate.map(function (reservation) {
+    return reservation.start_reservation;
+  });
+}
+
+function updateSelectOptions(reservedTimes) {
+  const selectElement = $("#selectedTime");
+  let heure = reservedTimes.toString();
+  let newHeure = heure.replace(/:00$/, "");
+  console.log(newHeure);
+  // Itérer à travers les options du select
+  selectElement.find("option").each(function () {
+    const optionValue = $(this).val();
+    // console.log(optionValue);
+    // if (optionValue == newHeure) {
+    //   console.log(true);
+    // } else {
+    //   console.log(false);
+    // }
+    // Vérifier si la valeur de l'option est présente dans reservedTimes
+    if (newHeure.includes(optionValue)) {
+      // Supprimer l'option si la valeur est réservée
+      $(this).remove();
+    }
+  });
 }

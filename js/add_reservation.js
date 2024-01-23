@@ -16,12 +16,15 @@ function add_reservation() {
     })
     .then((response) => {
       const responseData = response.data;
-      console.log(responseData);
+      console.log(response);
+      closeModal();
+      location.reload();
     })
     .catch((error) => {
       console.log(error);
     });
 }
 
-const formulaireResa = document.getElementById("sendReservation");
-formulaireResa.addEventListener("click", add_reservation);
+function checkIfDateIsResa() {}
+// const formulaireResa = document.getElementById("sendReservation");
+// formulaireResa.addEventListener("click", add_reservation);

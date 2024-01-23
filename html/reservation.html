@@ -49,9 +49,35 @@
         <input type="text" id="selectedDate" name="selectedDate" required />
 
         <label for="selectedTime">Selected Time:</label>
-        <input type="text" id="selectedTime" name="selectedTime" required />
+        <select id="selectedTime" name="selectedTime" required>
+          <option value="" disabled selected>Sélectionnez une heure</option>
+          <!-- Ajoutez les options pour les heures de 9h à 19h avec des demi-heures -->
+          <option value="09:00">09:00</option>
+          <option value="09:30">09:30</option>
+          <option value="10:00">10:00</option>
+          <option value="10:30">10:30</option>
+          <option value="11:00">11:00</option>
+          <option value="11:30">11:30</option>
+          <option value="12:00">12:00</option>
+          <option value="12:30">12:30</option>
+          <option value="13:00">13:00</option>
+          <option value="13:30">13:30</option>
+          <option value="14:00">14:00</option>
+          <option value="14:30">14:30</option>
+          <option value="15:00">15:00</option>
+          <option value="15:30">15:30</option>
+          <option value="16:00">16:00</option>
+          <option value="16:30">16:30</option>
+          <option value="17:00">17:00</option>
+          <option value="17:30">17:30</option>
+          <option value="18:00">18:00</option>
+          <option value="18:30">18:30</option>
+          <option value="19:00">19:00</option>
+        </select>
 
-        <button type="button" id="sendReservation">Submit Reservation</button>
+        <button type="button" id="sendReservation" onclick="add_reservation()">
+          Submit Reservation
+        </button>
         <!-- <h2>Réserver</h2>
         <p>Date: <span id="modalDate"></span></p>
         <p>Heure: <span id="modalTime"></span></p>
@@ -63,7 +89,6 @@
       $(document).ready(function () {
         let formResa = document.getElementById("reservationForm");
         let reservationModal = document.getElementById("reservationModal");
-
         $("#calendar").fullCalendar({
           lang: "fr",
           header: {
@@ -97,8 +122,28 @@
             $("#selectedDate").val(moment(start).format("YYYY-MM-DD"));
             $("#selectedTime").val(moment(start).format("HH:mm"));
           },
+          dayClick: function (date, jsEvent, view) {
+            const selectedDate = moment(date).format("YYYY-MM-DD");
+            const reservedTimes = getReservedTimesForDate(selectedDate);
+
+            // Mettez à jour les options du select
+            updateSelectOptions(reservedTimes);
+
+            if (reservedTimes.length > 0) {
+              // Affichez les réservations existantes pour la date sélectionnée
+              reservedTimes.forEach((element) => {
+                // console.log(element);
+              });
+              //console.log(reservationsForDate.start_reservation);
+            } else {
+              // Aucune réservation existante, vous pouvez effectuer d'autres actions si nécessaire
+              // Dans cet exemple, afficher un message ou effectuer une autre action
+              console.log("Aucune réservation existante pour cette date.");
+            }
+          },
         });
         showResa();
+        //recuperationDate();
       });
     </script>
     <script src="../js/add_reservation.js"></script>

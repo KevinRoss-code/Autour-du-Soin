@@ -9,6 +9,9 @@ $dbname = DB_NAME; // Remplacez par le nom de votre base de données
 // Créer une nouvelle connexion à la base de données
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+$result = "";
+$error = "";
+
 
 if ($conn->connect_error) {
   die("Erreur : " . $conn->connect_error);
@@ -38,18 +41,23 @@ if ($conn->connect_error) {
         // Exécuter la requête préparée
         if ($stmt->execute()) {
           // L'insertion a réussi
-          echo "Les données ont été ajoutées avec succès à la base de données.";
+          $result = "Les données ont été ajoutées avec succès à la base de données.";
         } else {
           // Une erreur s'est produite lors de l'insertion
-          echo "Erreur lors de l'ajout des données : " . $stmt->error;
+          $error = "Erreur lors de l'ajout des données : " . $stmt->error;
         }
 
         // Fermer la déclaration de requête
         $stmt->close();
       } else {
         // Une erreur s'est produite lors de la préparation de la requête
-        echo "Erreur lors de la préparation de la requête : " . $conn->error;
+        $error = "Erreur lors de la préparation de la requête : " . $conn->error;
       }
     }
   }
+}
+if ($error == null) {
+  echo json_encode(array("succes" => true, 'result' => $result));
+} else {
+  echo json_encode(array("succes" => false, 'result' => $error));
 }
