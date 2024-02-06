@@ -22,3 +22,19 @@
 
 // Appelez la fonction une fois au chargement de la page pour gérer l'effet initial
 // handleScroll();
+// Récupération de tous les articles
+// Récupération du conteneur de défilement
+$(window).scroll(function () {
+  $("article").each(function () {
+    var articleTop = $(this).offset().top;
+    var articleBottom = articleTop + $(this).outerHeight();
+    var windowTop = $(window).scrollTop();
+    var windowBottom = windowTop + $(window).height();
+
+    if (articleBottom > windowTop && articleTop < windowBottom) {
+      $(this).addClass("visible");
+    } else {
+      $(this).removeClass("visible");
+    }
+  });
+});

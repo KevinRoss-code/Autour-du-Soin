@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,200&family=Lobster&family=Neuton:ital,wght@0,300;0,400;1,400&display=swap');
+/*@import url("https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,200&family=Lobster&family=Neuton:ital,wght@0,300;0,400;1,400&display=swap");
 
 /* faire en sorte quil soit responcive*/
 /* @media screen and (max-width: 35) {
@@ -6,83 +6,193 @@
         font-size: 14px;
     }
 } */
-.bandeau {
-    font-family: Cursive;
-    font-size: 20px;
-    background-color: #ffeeff;
-    padding-right: 2%;
+/* .bandeau {
+  font-family: Cursive;
+  font-size: 20px;
+  background-color: #ffeeff;
+  padding-right: 2%;
 }
 
-#header{
-    background-color: #ffeeff;
+#header {
+  background-color: #ffeeff;
 }
 
 p {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .bandeau a:hover {
-    text-decoration: underline; 
-    text-decoration-color: #ffadb4;
-    color: #ffadb4; 
+  text-decoration: underline;
+  text-decoration-color: #ffadb4;
+  color: #ffadb4;
 }
 
-.bandeau a{
-    color: #ffadb4;
-    text-decoration: none;
-    padding-left: 1%;
+.bandeau a {
+  color: #ffadb4;
+  text-decoration: none;
+  padding-left: 1%;
 }
 
-#logo{
-    width: 20%;
+#logo {
+  width: 20%;
 }
 
 h1 {
+  text-align: center;
+  text-decoration: underline;
+  padding: 2%;
+  font-family: URW Chancery L, cursive;
+  font-style: italic;
+  color: #669b37;
+  font-family: "Lobster", cursive;
+}
+
+#gauche {
+  width: 1000px;
+  height: 180px;
+  background-color: #e8fcd7;
+  margin: 1%;
+  padding: 1%;
+}
+
+#gauche p {
+  font-family: "Neuton", serif;
+  font-size: 20px;
+}
+
+#gauche img {
+  width: 100px;
+}
+
+#droit {
+  width: 1000px;
+  height: 180px;
+  background-color: #e8fcd7;
+  margin: 1%;
+  float: right;
+}
+
+#droit img {
+  width: 100px;
+}
+
+#droit p {
+  margin: 1.5%;
+  font-family: "Imbue", serif;
+  font-size: 25px;
+}
+
+h2 {
+  text-align: center;
+  text-decoration: underline;
+  padding: 2%;
+  padding-top: 14%;
+  font-family: URW Chancery L, cursive;
+  font-style: italic;
+  color: #669b37;
+  font-family: "Lobster", cursive;
+}
+
+#h2Partenair {
+  padding-top: 2%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  background-color: #e8fcd7;
+  width: 100%;
+}
+
+.text-container {
+  flex: 1;
+  padding: 20px;
+  margin: -31px;
+  font-family: Arial, sans-serif;
+}
+
+.rounded-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin: 20px;
+  flex-shrink: 0;
+}
+
+#propos {
+  background-color: #e8fcd7;
+}
+
+.containerPartenair {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.containerPartenair img {
+  width: 600px;
+  height: 400px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.image-title {
+  text-align: center;
+  font-size: 20px;
+  font-family: URW Chancery L, cursive;
+}
+
+.containerPartenair a {
+  text-decoration: none;
+} */
+@import url("https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,200&family=Lobster&family=Neuton:ital,wght@0,300;0,400;1,400&display=swap");
+
+@media screen and (min-width: 400px) {
+  header {
+    background-image: url("../images/wave.png");
+  }
+  img {
+    width: 40%;
+  }
+
+  .bandeau {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments horizontalement */
+    padding: 10px; /* Ajoute un espace intérieur pour un meilleur aspect */
+    font-family: Cursive;
+  }
+  .rounded-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: 5%;
+    flex-shrink: 0;
+  }
+  .bandeau a:hover {
+    text-decoration: underline;
+    text-decoration-color: #ffadb4;
+    color: #ffadb4;
+  }
+
+  .bandeau a {
+    color: #ffadb4;
+    text-decoration: none;
+    padding-left: 1%;
+  }
+
+  h1 {
     text-align: center;
     text-decoration: underline;
     padding: 2%;
     font-family: URW Chancery L, cursive;
     font-style: italic;
     color: #669b37;
-    font-family: 'Lobster', cursive;
-}
+    font-family: "Lobster", cursive;
+  }
 
-#gauche{
-    width: 1000px;
-    height: 180px;
-    background-color: #e8fcd7;
-    margin: 1%; 
-    padding: 1%;   
-}
-
-#gauche p{
-    font-family: 'Neuton', serif;
-    font-size: 20px;
-}
-
-#gauche img{
-    width: 100px;
-}
-
-#droit {
-    width: 1000px;
-    height: 180px;
-    background-color: #e8fcd7;
-    margin: 1%;
-    float: right;
-}
-
-#droit img{
-    width: 100px;
-}
-
-#droit p {
-    margin: 1.5%;
-    font-family: 'Imbue', serif;
-    font-size: 25px;
-}
-
-h2 {
+  h2 {
     text-align: center;
     text-decoration: underline;
     padding: 2%;
@@ -90,59 +200,225 @@ h2 {
     font-family: URW Chancery L, cursive;
     font-style: italic;
     color: #669b37;
-    font-family: 'Lobster', cursive;
-}
-
-#h2Partenair{
-    padding-top: 2%
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    background-color: #e8fcd7;
-    width: 100%;
+    font-family: "Lobster", cursive;
   }
 
-  .text-container {
-    flex: 1;
-    padding: 20px;
-    margin: -31px;
-    font-family: Arial, sans-serif;
-  }
-
-  .rounded-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    margin: 20px;
-    flex-shrink: 0;
-  }
-
-#propos{
-    background-color: #e8fcd7;
-}
-
-.containerPartenair{
+  .containerPartenair {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 2%;
-}
+  }
+  .containerPartenair {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+  }
 
-.containerPartenair img {
+  .containerPartenair img {
     width: 600px;
-    height:400px;
+    height: 400px;
     max-width: 100%;
     max-height: 100%;
-}
+  }
 
-.image-title{
+  .image-title {
     text-align: center;
     font-size: 20px;
     font-family: URW Chancery L, cursive;
-}
+  }
 
-.containerPartenair a {
-    text-decoration: none;
+  p {
+    font-family: "Neuton", serif;
+  }
+  footer {
+    background-color: #e8fcd7;
+    padding: 2%;
+    color: #333;
+    text-align: center;
+  }
+  footer h3 {
+    font-size: 27px;
+    margin: 2%;
+    text-decoration: underline;
+    font-style: italic;
+    color: #669b37;
+    font-family: "Lobster", cursive;
+  }
+}
+@media screen and (min-width: 600px) {
+  p {
+    font-size: 18px;
+  }
+  .rounded-image {
+    margin-left: 20%;
+  }
+  #gauche {
+    padding: 3%;
+  }
+  #droite {
+    padding: 3%;
+  }
+  #titre {
+    margin-top: 5%;
+  }
+  .bandeau a {
+    font-size: 18px;
+  }
+  #titre2 {
+    margin-top: -10%;
+  }
+  .containerPartenair {
+    margin: 1%;
+  }
+}
+@media screen and (min-width: 900px) {
+  .bandeau a {
+    font-size: 25px;
+  }
+  p {
+    font-size: 18px;
+  }
+  .rounded-image {
+    margin-left: 28%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .bandeau {
+    display: flex;
+    flex-direction: row;
+  }
+  .bandeau a {
+    font-size: 25px;
+  }
+  #titre {
+    font-size: 60px;
+  }
+  p {
+    font-size: 22px;
+  }
+  #header {
+    width: 100%;
+  }
+  #titre2 {
+    font-size: 50px;
+  }
+  #gauche {
+    margin-left: 10%;
+  }
+  #droite {
+    margin-left: 10%;
+  }
+  .text-container {
+    margin-left: 1%;
+  }
+  .rounded-image {
+    margin-left: 30%;
+    width: 40%;
+    height: 40%;
+  }
+  #h2Partenair {
+    margin-top: -10%;
+    font-size: 45px;
+  }
+  .containerPartenair {
+    margin: 2%;
+    height: 100%;
+  }
+  /* Effet de transition pour les articles */
+  article {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Effet de zoom au survol des articles */
+  article:hover {
+    transform: scale(1.05);
+  }
+
+  /* Effet de transition pour les images */
+  img.rounded-image {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Effet de zoom au survol des images */
+  img.rounded-image:hover {
+    transform: scale(1.05);
+  }
+  header {
+    /* Définir l'image de fond */
+    background-image: url("../images/wave.png");
+    /* Taille de l'image de fond */
+    background-size: cover;
+    /* Position de départ de l'image de fond */
+    background-position: 0 50%;
+    /* Animation de l'onde */
+    animation: wave 5s infinite alternate;
+  }
+
+  /* Animation de l'onde */
+  /* Animation de l'onde */
+  @keyframes wave {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%; /* Effet de vague horizontale à 50% de l'animation */
+    }
+    100% {
+      background-position: 100% 0; /* Effet de vague verticale à la fin de l'animation */
+    }
+  }
+  /* Style pour le footer */
+  footer {
+    background-color: #e8fcd7;
+    padding: 2%;
+    color: #333;
+    text-align: center;
+  }
+
+  /* Style pour les sections de contact et d'horaires */
+  footer .row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  footer .col-lg-6 {
+    width: 50%;
+    padding: 0 20px;
+  }
+
+  /* Style pour les titres */
+  footer h3 {
+    font-size: 27px;
+    margin: 2%;
+    text-decoration: underline;
+    font-style: italic;
+    color: #669b37;
+    font-family: "Lobster", cursive;
+  }
+
+  /* Style pour les icônes */
+  footer i {
+    margin-right: 10px;
+  }
+
+  /* Style pour les liens */
+  footer a {
+    color: #ffadb4;
+    font-family: Cursive;
+  }
+
+  /* Style pour les réseaux sociaux */
+  footer .fab {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+  /* Style pour les paragraphes */
+  footer p {
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
 }

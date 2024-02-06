@@ -32,8 +32,9 @@
     ></script>
   </head>
   <body>
-    <header>
-      <div class="container" id="header">
+    <header class="container" id="header">
+      <!-- <img src="../images/wave.png" alt="wave" id="wave"> -->
+      <div >
         <div class="bandeau">
           <a href="massages.html">Les massages</a>
           <a href="page_article.html">Les soins du visage</a>
@@ -42,14 +43,12 @@
           <a href="page_article.html">Les ongles</a>
           <a href="page_article.html">Les épilations</a>
           <a href="./tarif.html">Les tarifs</a>
-          <a href="./reservation.html">Réservation</a>
         </div>
       </div>
     </header>
-    <article>
-      <h1>Bienvenue dans votre espace bien-être : </br>Les Massages d’Anaëlle</h1>
-    </article>
+    <div class="scroll-container">
       <article id="gauche">
+        <h1 id="titre">Bienvenue dans votre espace bien-être : </br>Les Massages d’Anaëlle</h1>    
         <p class="scroll-text">
           Vous entrez dans un lieu consacré à la détente, au bien-être et au soin,
           ou je suis ravie de prendre soin de vous. <br/>Grâce à mon savoir faire et
@@ -60,47 +59,74 @@
         <p>La beauté et la détente commencent ici.</p>
         <!-- <img src="../images/floriture.png" alt="Séparation des paragraphes"> -->
       </article>
-    <article id="droit">
-      <p class="scroll-text">
-        Un massage bien-être c’est quoi ? Cela permet de se détendre et relaxer,
-        soulager les tensions musculaires, faciliter la circulation sanguine et
-        lymphatique (nouvelle oxygénation des tissus). <br />Aussi il stimule les
-        terminaisons nerveuses et musculaires et permet une détente pendant et
-        après le massage. <br />Le soin relaxe l’ensemble du corps, diminue stress et
-        hypertension, insomnie. Lâcher prise et détente garantis.
-      </p>
-      <p>
-        ⚠️ Le massage bien-être est une prestation non médicale, pour des
-        problèmes de santé consulter un spécialiste de santé.
-      </p>
-      <!-- <img src="../images/floriture.png" alt="Séparation des paragraphes"> -->
-    </article>
-    <h2>À propos :</h2>
-    <article id="propos">
-      <div class="container">
-        <div class="text-container">
-          <p class="scroll-text">
-            Après avoir fait un baccalauréat Sciences et Technologies du Sanitaire
-            et du Social et des études de biologie je me suis lancer dans le massage
-            bien-être. Je souhaitais rester en contact avec les personnes et de
-            prendre soin de celles qui en ont besoin. <br />En 2019 j’ai rencontré Marie
-            Blaszczyk qui m’a permis de suivre un cursus professionnel, c’est ainsi
-            que j’ai réalisé une formation à l’école du massage à Tours. <br />Suite à
-            cette formation j’ai décidé de m’installer et de créer mon entreprise
-            dans le sud Touraine en 2021. Par la suite j’ai préparer un cap
-            d’esthétique pour élargir mes horizons et mes compétences, que j’ai
-            obtenu en 2022.
-          </p>
-          <!-- <img src="../images/floriture.png" alt="Séparation des paragraphes"> -->
-        </div>
+    
+      <article id="droite">
+        <p class="scroll-text">
+          Un massage bien-être c’est quoi ? Cela permet de se détendre et relaxer,
+          soulager les tensions musculaires, faciliter la circulation sanguine et
+          lymphatique (nouvelle oxygénation des tissus). <br />Aussi il stimule les
+          terminaisons nerveuses et musculaires et permet une détente pendant et
+          après le massage. <br />Le soin relaxe l’ensemble du corps, diminue stress et
+          hypertension, insomnie. Lâcher prise et détente garantis.
+        </p>
+        <p>
+          ⚠️ Le massage bien-être est une prestation non médicale, pour des
+          problèmes de santé consulter un spécialiste de santé.
+        </p>
+        <!-- <img src="../images/floriture.png" alt="Séparation des paragraphes"> -->
+      </article>
+    
+      <article id="propos">
+        <h2 id="titre2">À propos :</h2>
+        <div class="container">
+          <div class="text-container">
+            <p class="scroll-text">
+              Après avoir fait un baccalauréat Sciences et Technologies du Sanitaire
+              et du Social et des études de biologie je me suis lancer dans le massage
+              bien-être. Je souhaitais rester en contact avec les personnes et de
+              prendre soin de celles qui en ont besoin. <br />En 2019 j’ai rencontré Marie
+              Blaszczyk qui m’a permis de suivre un cursus professionnel, c’est ainsi
+              que j’ai réalisé une formation à l’école du massage à Tours. <br />Suite à
+              cette formation j’ai décidé de m’installer et de créer mon entreprise
+              dans le sud Touraine en 2021. Par la suite j’ai préparer un cap
+              d’esthétique pour élargir mes horizons et mes compétences, que j’ai
+              obtenu en 2022.
+            </p>
+            <!-- <img src="../images/floriture.png" alt="Séparation des paragraphes"> -->
+          </div>
           <img class="rounded-image" src="../images/2.jpeg" />
-      </div>
-    </article>
+        </div>
+      </article>
+    </div> 
     <article>
       <h2 id="h2Partenair">Mes partenaires : </h2>
         <div class="containerPartenair"></div>
-      </article>
-    <script src="../js/index.js"></script>
-    <script src="../js/process_show_partenair.js"></script>
+    </article>
+    <footer>
+      <div class="class row">
+        <div class="class col-lg-6 contact">
+          <h3>Contact : </h3>
+            <p>Massages bien-être à domicile :</br>
+                <i class="fas fa-globe-europe"></i> Loches et ses alentours</br>
+                <i class="fas fa-envelope"></i> <a
+                    href="mailto:lesmassagesdanaelle@gmail.com">lesmassagesdanaelle@gmail.com</a></br>
+                <i class="fas fa-phone-square-alt"></i> Téléphone : <a href="tel:+33698569344">06 98 56 93 44</a>
+            </p>
+            <i class="fab fa-facebook-square"></i> <a href="https://www.facebook.com/lesmassagesdanaelle">La page
+                Facebook</a><br />
+            <i class="fab fa-instagram-square"></i> <a href="https://www.instagram.com/lesmassagesdanaelle"> La page
+                Instagram</a>
+        </div>
+        <div class="class col-lg-6 horaire">
+          <h3>Horaires : </h3>
+            <p> <i class="fas fa-clock"></i> Prendre rendez-vous par téléphone ou par mail.</br>
+                Le lundi de 8h30 à 18h30.</br>
+                Du mercredi au vendredi de 8h30 à 18h30.</br>
+                Le samedi de 8h30 à 19h30.</br>
+                Fermé le mardi.</br></p>
+        </div>
+      </div>
+    </footer>
   </body>
+  <script src="../js/process_show_partenair.js"></script>
 </html>
