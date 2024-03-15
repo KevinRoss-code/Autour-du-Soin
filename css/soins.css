@@ -4,26 +4,20 @@
   body {
     width: 100%;
   }
-  .name {
+  .nameCare {
     text-align: center;
     text-decoration: underline;
     text-decoration-color: #669b37;
     font-family: "Lobster", cursive;
     font-size: 20px;
   }
-  .description {
+  .dureeCare {
     text-align: center;
     font-family: "Neuton", serif;
     font-size: 17px;
     margin: 1%;
   }
-  .duree {
-    text-align: center;
-    font-family: "Neuton", serif;
-    font-size: 17px;
-    margin: 1%;
-  }
-  .prix {
+  .prixCare {
     text-align: center;
     font-family: "Neuton", serif;
     font-size: 17px;
@@ -43,7 +37,7 @@
 }
 
 @media screen and (min-width: 800px) {
-  .name {
+  .nameCare {
     font-size: 25px;
   }
 }
@@ -52,16 +46,13 @@
   .h1containerother {
     font-size: 60px;
   }
-  .name {
+  .nameCare {
     font-size: 37px;
   }
-  .description {
+  .prixCare {
     font-size: 25px;
   }
-  .prix {
-    font-size: 25px;
-  }
-  .duree {
+  .dureeCare {
     font-size: 25px;
   }
   .ma-classe-image {

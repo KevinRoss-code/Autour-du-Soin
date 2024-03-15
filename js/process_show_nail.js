@@ -5,36 +5,38 @@ function getNail() {
       const nails = response.data;
 
       // Assuming you have an element with the class name to hold all articles
-      const nailContainer = document.querySelector(".containerNail");
+      // const nailContainer = document.querySelector(".containerNail");
+      const containerOngle = document.getElementById("containerOngle");
 
-      // Clear the content of the articles container before adding new articles
-      nailContainer.innerHTML = "";
+      if (containerOngle) {
+        nails.forEach((nail) => {
+          // Create elements to display article information
+          const nailElement = document.createElement("div");
+          nailElement.className = "nail row";
 
-      nails.forEach((nail) => {
-        // Create elements to display article information
-        const nailElement = document.createElement("div");
-        nailElement.className = "makeup row";
+          const nameNailElement = document.createElement("div");
+          nameNailElement.className = "nameNail";
+          nameNailElement.innerHTML = nail.name;
 
-        const nameNailElement = document.createElement("div");
-        nameNailElement.className = "nameNail col-2";
-        nameNailElement.innerHTML = nail.name;
+          const dureeNailElement = document.createElement("div");
+          dureeNailElement.className = "dureeNail";
+          dureeNailElement.innerHTML = nail.duree;
 
-        const dureeNailElement = document.createElement("div");
-        dureeNailElement.className = "dureeNail col-2";
-        dureeNailElement.innerHTML = nail.duree;
+          const prixNailElement = document.createElement("div");
+          prixNailElement.className = "prixNail";
+          prixNailElement.innerHTML = nail.prix;
 
-        const prixNailElement = document.createElement("div");
-        prixNailElement.className = "prixMakeup col-2";
-        prixNailElement.innerHTML = nail.prix;
+          // Append the elements to the article element
+          nailElement.appendChild(nameNailElement);
+          nailElement.appendChild(dureeNailElement);
+          nailElement.appendChild(prixNailElement);
 
-        // Append the elements to the article element
-        nailElement.appendChild(nameNailElement);
-        nailElement.appendChild(dureeNailElement);
-        nailElement.appendChild(prixNailElement);
-
-        // Append the article element to the articles container
-        nailContainer.appendChild(nailElement);
-      });
+          // Append the article element to the articles container
+          containerOngle.appendChild(nailElement);
+        });
+      } else {
+        console.error("Element #containerMassage not found in the DOM.");
+      }
     })
     .catch((error) => {
       console.log(error);

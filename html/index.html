@@ -10,6 +10,8 @@
     <meta name="content-language" content="fr-FR" />
     <title>Les massages d'Anaelle</title>
     <link type="text/css" rel="stylesheet" href="../css/index.css" />
+    <link type="text/css" rel="stylesheet" href="../css/massages.css" />
+    <link type="text/css" rel="stylesheet" href="../css/soins.css" />
     <!--<link rel="icon" type="image/png" href="./logo/logo_accueil.PNG" /> -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
@@ -30,22 +32,24 @@
       src="http://code.jquery.com/jquery.js"
       type="text/javascript"
     ></script>
+    <!-- <script src="../js/process_show_article.js"></script> -->
   </head>
   <body>
     <header class="container" id="header">
       <!-- <img src="../images/wave.png" alt="wave" id="wave"> -->
       <div >
         <div class="bandeau">
-          <a href="massages.html">Les massages</a>
-          <a href="page_article.html">Les soins du visage</a>
-          <a href="page_article.html">Le maquillage</a>
+          <a href="#" class="nav-link" data-target="containerMassage">Les massages</a>
+          <a href="#" class="nav-link" data-target="containerSoins">Les soins du visage</a>
+          <a href="#" class="nav-link" data-target="containerMaquillage">Le maquillage</a>
           <img src="../images/logo_accueil.PNG" id="logo" />
-          <a href="page_article.html">Les ongles</a>
-          <a href="page_article.html">Les épilations</a>
-          <a href="./tarif.html">Les tarifs</a>
+          <a href="#" class="nav-link" data-target="containerOngle">Les ongles</a>
+          <a href="#" class="nav-link" data-target="containerEpilation">Les épilations</a>
+          <a href="#" class="nav-link" data-target="containerTarif">Les tarifs</a>
         </div>
       </div>
     </header>
+    <div id="bodyContent">
     <div class="scroll-container">
       <article id="gauche">
         <h1 id="titre">Bienvenue dans votre espace bien-être : </br>Les Massages d’Anaëlle</h1>    
@@ -102,6 +106,25 @@
       <h2 id="h2Partenair">Mes partenaires : </h2>
         <div class="containerPartenair"></div>
     </article>
+  </div>
+      <div id="containerMassage"  style="display:none">
+        <h1 class="h1containerother">Mes prestations :</h1>
+      </div>
+      <div id="containerSoins"  style="display:none">
+        <h1 class="h1containerother">Les soins du visage :</h1>
+      </div>
+      <div id="containerMaquillage"  style="display:none">
+        <h1 class="h1containerother">Le maquillage :</h1>
+      </div>
+      <div id="containerOngle"  style="display:none">
+        <h1 class="h1containerother">Les ongles :</h1>
+      </div>
+      <div id="containerEpilation"  style="display:none">
+        <h1 class="h1containerother">Les épilations :</h1>
+      </div>
+      <div id="containerTarif"  style="display:none">
+        <h1 class="h1containerother">Les tarifs :</h1>
+      </div>
     <footer>
       <div class="class row">
         <div class="class col-lg-6 contact">
@@ -128,5 +151,12 @@
       </div>
     </footer>
   </body>
+  <script src="../js/process_show_article.js"></script>
   <script src="../js/process_show_partenair.js"></script>
+  <script src="../js/index.js"></script>
+  <script src="../js/process_show_care.js"></script>
+  <script src="../js/process_hair_removal.js"></script>
+  <script src="../js/process_show_makeup.js"></script>
+  <script src="../js/process_show_nail.js"></script>
+  <script src="../js/process_show_price.js"></script>
 </html>

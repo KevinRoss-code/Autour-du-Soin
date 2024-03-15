@@ -5,36 +5,40 @@ function getMakeup() {
       const makeups = response.data;
 
       // Assuming you have an element with the class name to hold all articles
-      const makeupContainer = document.querySelector(".containerMakeup");
+      //const makeupContainer = document.querySelector(".containerMakeup");
+      const containerMaquillage = document.getElementById(
+        "containerMaquillage"
+      );
 
-      // Clear the content of the articles container before adding new articles
-      makeupContainer.innerHTML = "";
+      if (containerMaquillage) {
+        makeups.forEach((makeup) => {
+          // Create elements to display article information
+          const makeupElement = document.createElement("div");
+          makeupElement.className = "makeup row";
 
-      makeups.forEach((makeup) => {
-        // Create elements to display article information
-        const makeupElement = document.createElement("div");
-        makeupElement.className = "makeup row";
+          const nameMakeupElement = document.createElement("div");
+          nameMakeupElement.className = "nameMakeup";
+          nameMakeupElement.innerHTML = makeup.name;
 
-        const nameMakeupElement = document.createElement("div");
-        nameMakeupElement.className = "nameMakeup col-2";
-        nameMakeupElement.innerHTML = makeup.name;
+          const dureeMakeupElement = document.createElement("div");
+          dureeMakeupElement.className = "dureeMakeup";
+          dureeMakeupElement.innerHTML = makeup.duree;
 
-        const dureeMakeupElement = document.createElement("div");
-        dureeMakeupElement.className = "dureeMakeup col-2";
-        dureeMakeupElement.innerHTML = makeup.duree;
+          const prixMakeupElement = document.createElement("div");
+          prixMakeupElement.className = "prixMakeup";
+          prixMakeupElement.innerHTML = makeup.prix;
 
-        const prixMakeupElement = document.createElement("div");
-        prixMakeupElement.className = "prixMakeup col-2";
-        prixMakeupElement.innerHTML = makeup.prix;
+          // Append the elements to the article element
+          makeupElement.appendChild(nameMakeupElement);
+          makeupElement.appendChild(dureeMakeupElement);
+          makeupElement.appendChild(prixMakeupElement);
 
-        // Append the elements to the article element
-        makeupElement.appendChild(nameMakeupElement);
-        makeupElement.appendChild(dureeMakeupElement);
-        makeupElement.appendChild(prixMakeupElement);
-
-        // Append the article element to the articles container
-        makeupContainer.appendChild(makeupElement);
-      });
+          // Append the article element to the articles container
+          containerMaquillage.appendChild(makeupElement);
+        });
+      } else {
+        console.error("Element #containerMassage not found in the DOM.");
+      }
     })
     .catch((error) => {
       console.log(error);

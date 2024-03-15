@@ -4,37 +4,37 @@ function getHairRemoval() {
     .then((response) => {
       const hairRemovals = response.data;
 
-      // Assuming you have an element with the class name to hold all articles
-      const hairContainer = document.querySelector(".containerHair");
+      const containerEpilation = document.getElementById("containerEpilation");
 
-      // Clear the content of the articles container before adding new articles
-      hairContainer.innerHTML = "";
+      if (containerEpilation) {
+        hairRemovals.forEach((epilation) => {
+          // Create elements to display article information
+          const epilationElement = document.createElement("div");
+          epilationElement.className = "epilation row";
 
-      hairRemovals.forEach((hairRemoval) => {
-        // Create elements to display article information
-        const hairElement = document.createElement("div");
-        hairElement.className = "hair row";
+          const nameEpilationElement = document.createElement("div");
+          nameEpilationElement.className = "nameEpilation";
+          nameEpilationElement.innerHTML = epilation.name;
 
-        const nameHairElement = document.createElement("div");
-        nameHairElement.className = "nameHair col-2";
-        nameHairElement.innerHTML = hairRemoval.name;
+          const dureeEpilationElement = document.createElement("div");
+          dureeEpilationElement.className = "dureeEpilation";
+          dureeEpilationElement.innerHTML = epilation.duree;
 
-        const dureeHairElement = document.createElement("div");
-        dureeHairElement.className = "dureeHair col-2";
-        dureeHairElement.innerHTML = hairRemoval.duree;
+          const prixEpilationElement = document.createElement("div");
+          prixEpilationElement.className = "prixEpilation";
+          prixEpilationElement.innerHTML = epilation.prix;
 
-        const prixHairElement = document.createElement("div");
-        prixHairElement.className = "prixHair col-2";
-        prixHairElement.innerHTML = hairRemoval.prix;
+          // Append the elements to the article element
+          epilationElement.appendChild(nameEpilationElement);
+          epilationElement.appendChild(dureeEpilationElement);
+          epilationElement.appendChild(prixEpilationElement);
 
-        // Append the elements to the article element
-        hairElement.appendChild(nameHairElement);
-        hairElement.appendChild(dureeHairElement);
-        hairElement.appendChild(prixHairElement);
-
-        // Append the article element to the articles container
-        hairContainer.appendChild(hairElement);
-      });
+          // Append the article element to the articles container
+          containerEpilation.appendChild(epilationElement);
+        });
+      } else {
+        console.error("Element #containerMassage not found in the DOM.");
+      }
     })
     .catch((error) => {
       console.log(error);

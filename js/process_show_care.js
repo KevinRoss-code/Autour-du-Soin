@@ -5,36 +5,38 @@ function getCares() {
       const cares = response.data;
 
       // Assuming you have an element with the class name to hold all articles
-      const caresContainer = document.querySelector(".containerCare");
+      //  const caresContainer = document.querySelector(".containerCare");
+      const containerSoins = document.getElementById("containerSoins");
 
-      // Clear the content of the articles container before adding new articles
-      caresContainer.innerHTML = "";
+      if (containerSoins) {
+        cares.forEach((care) => {
+          // Create elements to display article information
+          const careElement = document.createElement("div");
+          careElement.className = "care row";
 
-      cares.forEach((care) => {
-        // Create elements to display article information
-        const careElement = document.createElement("div");
-        careElement.className = "care row";
+          const nameCareElement = document.createElement("div");
+          nameCareElement.className = "nameCare";
+          nameCareElement.innerHTML = care.name;
 
-        const nameCareElement = document.createElement("div");
-        nameCareElement.className = "nameCare col-2";
-        nameCareElement.innerHTML = care.name;
+          const dureeCareElement = document.createElement("div");
+          dureeCareElement.className = "dureeCare";
+          dureeCareElement.innerHTML = care.dure;
 
-        const dureeCareElement = document.createElement("div");
-        dureeCareElement.className = "dureeCare col-2";
-        dureeCareElement.innerHTML = care.dure;
+          const prixCareElement = document.createElement("div");
+          prixCareElement.className = "prixCare";
+          prixCareElement.innerHTML = care.prix;
 
-        const prixCareElement = document.createElement("div");
-        prixCareElement.className = "prixCare col-2";
-        prixCareElement.innerHTML = care.prix;
+          // Append the elements to the article element
+          careElement.appendChild(nameCareElement);
+          careElement.appendChild(dureeCareElement);
+          careElement.appendChild(prixCareElement);
 
-        // Append the elements to the article element
-        careElement.appendChild(nameCareElement);
-        careElement.appendChild(dureeCareElement);
-        careElement.appendChild(prixCareElement);
-
-        // Append the article element to the articles container
-        caresContainer.appendChild(careElement);
-      });
+          // Append the article element to the articles container
+          containerSoins.appendChild(careElement);
+        });
+      } else {
+        console.error("Element #containerMassage not found in the DOM.");
+      }
     })
     .catch((error) => {
       console.log(error);

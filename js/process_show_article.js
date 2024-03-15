@@ -4,69 +4,80 @@ function getArticles() {
     .then((response) => {
       const articles = response.data;
 
-      // Assuming you have an element with the class name to hold all articles
-      const articlesContainer = document.querySelector(".container");
+      // Sélectionnez l'élément containerMassage dans le DOM
+      // const containerMassage = document.getElementById("containerMassage");
+      const containerMassage = document.getElementById("containerMassage");
+      //console.log(containerMassage);
 
-      // Clear the content of the articles container before adding new articles
-      articlesContainer.innerHTML = "";
+      // Vérifiez si l'élément containerMassage existe dans le DOM
+      if (containerMassage) {
+        // Parcourez les articles et créez les éléments correspondants
+        articles.forEach((article, index) => {
+          // Créez un élément pour afficher les informations de l'article
+          const articleElement = document.createElement("div");
+          articleElement.className = "article row";
 
-      articles.forEach((article, index) => {
-        // Create elements to display article information
-        const articleElement = document.createElement("div");
-        articleElement.className = "article row";
+          // Créez des éléments pour chaque information de l'article
+          const nameElement = document.createElement("div");
+          nameElement.className = "name";
+          nameElement.innerHTML = article.name;
 
-        const nameElement = document.createElement("div");
-        nameElement.className = "name";
-        nameElement.innerHTML = article.name;
+          const descElement = document.createElement("div");
+          descElement.className = "description";
+          descElement.innerHTML = article.massage_description;
 
-        const descElement = document.createElement("div");
-        descElement.className = "description";
-        descElement.innerHTML = article.massage_description;
+          const dureeElement = document.createElement("div");
+          dureeElement.className = "duree";
+          dureeElement.innerHTML = article.duree_massage + " min";
 
-        const dureeElement = document.createElement("div");
-        dureeElement.className = "duree";
-        dureeElement.innerHTML = article.duree_massage + " min";
+          const prixElement = document.createElement("div");
+          prixElement.className = "prix";
+          prixElement.innerHTML = article.prix + " €";
 
-        const prixElement = document.createElement("div");
-        prixElement.className = "prix";
-        prixElement.innerHTML = article.prix + " €";
+          const imageDiv = document.createElement("div");
+          imageDiv.className = "image";
 
-        const imageDiv = document.createElement("div");
-        imageDiv.className = "image";
+          // Vérifiez s'il y a un chemin d'image pour l'article
+          if (article.image_path) {
+            const imageElement = document.createElement("img");
+            imageElement.src = article.image_path;
+            imageDiv.appendChild(imageElement);
+          } else {
+            // Si aucune image n'est disponible, vous pouvez afficher un texte de remplacement ou gérer cela comme nécessaire
+            imageDiv.innerHTML = "No Image Available";
+          }
 
-        if (index % 2 === 0) {
-          articleElement.classList.add("align-right"); // Aligner à droite pour les indices pairs
-        } else {
-          articleElement.classList.add("align-left");
-        }
+          // Créez un nouvel élément img
+          let img = new Image(); // Ou document.createElement('img');
 
-        if (article.image_path) {
-          const imageElement = document.createElement("img");
-          imageElement.src = article.image_path;
-          imageDiv.appendChild(imageElement);
-        } else {
-          // If there's no image, you can display a placeholder or handle it as needed
-          imageDiv.innerHTML = "No Image Available";
-        }
+          // Définissez la source de l'image
+          img.src = "../images/floriture_background_white.png";
 
-        // Add a class to alternate the alignment based on the index
-        if (index % 2 === 0) {
-          articleElement.classList.add("align-right"); // Align to right for even indices
-        } else {
-          articleElement.classList.add("align-left"); // Align to left for odd indices
-        }
+          // Définissez d'autres attributs si nécessaire
+          img.alt = "séparateur des articles";
+          img.className = "ma-classe-image";
+          img.style.width = "300px";
+          img.style.height = "200px";
+          img.style.display = "block";
+          img.style.marginLeft = "auto";
+          img.style.marginRight = "auto";
+          img.style.marginTop = "auto";
+          img.style.marginBottom = "auto";
 
-        // Append the elements to the article element
-        articleElement.appendChild(nameElement);
-        articleElement.appendChild(descElement);
-        articleElement.appendChild(dureeElement);
-        articleElement.appendChild(prixElement);
-        articleElement.appendChild(imageDiv);
-        articlesContainer.appendChild(articleElement);
+          // Ajoutez les éléments à l'élément de l'article
+          articleElement.appendChild(nameElement);
+          articleElement.appendChild(descElement);
+          articleElement.appendChild(dureeElement);
+          articleElement.appendChild(prixElement);
+          articleElement.appendChild(imageDiv);
+          articleElement.appendChild(img);
 
-        // Append the article element to the articles container
-        affichage = articlesContainer.appendChild(articleElement);
-      });
+          // Ajoutez l'élément de l'article à l'élément containerMassage
+          containerMassage.appendChild(articleElement);
+        });
+      } else {
+        console.error("Element #containerMassage not found in the DOM.");
+      }
     })
     .catch((error) => {
       console.log(error);
