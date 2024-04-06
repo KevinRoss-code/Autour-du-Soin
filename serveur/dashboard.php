@@ -15,27 +15,28 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
     <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
-    <link type="text/css" rel="stylesheet" href="../css/datatable.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
     <title>Dashboard</title>
-    <style>
-        /* Style pour cacher les formulaires et les tables */
-        .hidden {
-            display: none;
-        }
-    </style>
 </head>
 
 <body>
     <!-- Contenu de la page dashboard -->
     <h1>Tableau de bord</h1>
     <!-- Lien pour ajouter -->
-    <h2 id="ajouter-link">Ajouter</h2>
-
-    <!-- Formulaires pour ajouter -->
-    <form method="post" id="monFormulaire" class="formulaire hidden">
+    <h2>Ajouter</h2>
+    <select id="selectForm">
+        <option value="massage">Massage</option>
+        <option value="facialCare">Soins du visage</option>
+        <option value="facialMakeup">Maquillages</option>
+        <option value="nail">Ongles</option>
+        <option value="hair">Epilation</option>
+        <option value="addPartenair">Partenaires</option>
+    </select>
+    Formulaires pour ajouter
+    <form method="post" id="formMassage" class="formulaire hidden">
         <!-- Vos champs de formulaire ici -->
         <h3>Massage</h3>
         <label>Nom :</label>
@@ -134,87 +135,97 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         <input type="button" value="Ajouter" id="sendFormPartenair" />
     </form>
 
-    <h2 id="update-link">Modifier</h2>
-    <table id="tableUpdateMassage" style="width: 100%">
+    <h2>Modifier</h2>
+    <select id="selectDatable">
+        <option value="massage">Massage</option>
+        <option value="facialCare">Soins du visage</option>
+        <option value="facialMakeup">Maquillages</option>
+        <option value="nail">Ongles</option>
+        <option value="hair">Epilation</option>
+    </select>
+    <table id="tableUpdateMassage" style="width: 100%" class='table hidden'>
         <h3>Massage</h3>
         <thead>
             <tr>
+                <th>id</th>
                 <th>Nom</th>
                 <th>Description</th>
                 <th>Durée</th>
                 <th>Prix</th>
                 <th>Image</th>
                 <th>Bouton modfi.</th>
-                <!-- Ajoutez d'autres colonnes si nécessaire -->
             </tr>
         </thead>
         <tbody>
-            <!-- Les données seront insérées ici dynamiquement -->
+
         </tbody>
     </table>
-    <table id="tableUpdateMaquillage" style="width: 100%">
+    <table id="tableUpdateFacialMakeup" style="width: 100%" class='table hidden'>
         <h3>Maquillage</h3>
         <thead>
             <tr>
+                <th>id</th>
                 <th>Nom</th>
                 <th>Durée</th>
                 <th>Prix</th>
                 <th>Bouton modfi.</th>
-                <!-- Ajoutez d'autres colonnes si nécessaire -->
+
             </tr>
         </thead>
         <tbody>
-            <!-- Les données seront insérées ici dynamiquement -->
+
         </tbody>
     </table>
-    <table id="tableUpdateEpilation" style="width: 100%">
+    <table id="tableUpdateHair" style="width: 100%" class='table hidden'>
         <h3>Epilation</h3>
         <thead>
             <tr>
+                <th>id</th>
                 <th>Nom</th>
                 <th>Durée</th>
                 <th>Prix</th>
                 <th>Bouton modfi.</th>
-                <!-- Ajoutez d'autres colonnes si nécessaire -->
+
             </tr>
         </thead>
         <tbody>
-            <!-- Les données seront insérées ici dynamiquement -->
+
         </tbody>
     </table>
-    <table id="tableUpdateSoinVisage" style="width: 100%">
+    <table id="tableUpdateFacialCare" style="width: 100%" class='table hidden'>
         <h3>Soin du visage</h3>
         <thead>
             <tr>
+                <th>id</th>
                 <th>Nom</th>
                 <th>Durée</th>
                 <th>Prix</th>
                 <th>Bouton modfi.</th>
-                <!-- Ajoutez d'autres colonnes si nécessaire -->
+
             </tr>
         </thead>
         <tbody>
-            <!-- Les données seront insérées ici dynamiquement -->
+
         </tbody>
     </table>
-    <table id="tableUpdateOngle" style="width: 100%">
+    <table id="tableUpdateNail" style="width: 100%" class='table hidden'>
         <h3>Ongles</h3>
         <thead>
             <tr>
+                <th>id</th>
                 <th>Nom</th>
                 <th>Durée</th>
                 <th>Prix</th>
                 <th>Bouton modfi.</th>
-                <!-- Ajoutez d'autres colonnes si nécessaire -->
             </tr>
         </thead>
         <tbody>
-            <!-- Les données seront insérées ici dynamiquement -->
+
         </tbody>
     </table>
 
     <!-- JavaScript pour gérer l'affichage/masquage des formulaires -->
-    <script>
+    <!-- <script>
         $(document).ready(function() {
             $('table').not(':first').hide();
 
@@ -234,6 +245,10 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                     "dataSrc": "" // Cela indique à DataTables que les données sont directement disponibles dans l'objet JSON
                 },
                 "columns": [{
+                        data: 'id',
+                        className: "idHidden"
+                    },
+                    {
                         "data": "name"
                     },
                     {
@@ -249,9 +264,10 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                         "data": "image_path"
                     },
                     {
-                        "render": function(data, type, row) {
-                            return '<button class="btn-show-first-column">Afficher</button>';
-                        }
+                        data: null,
+                        orderable: false,
+                        title: "Modifier le massage",
+                        "defaultContent": "<button class='btn-modificateur' onclick='buttonModif(($this))'>Modifier le massage</button>"
                     }
                     // Ajoutez d'autres colonnes si nécessaire
                 ]
@@ -262,6 +278,10 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                     "dataSrc": "" // Cela indique à DataTables que les données sont directement disponibles dans l'objet JSON
                 },
                 "columns": [{
+                        data: 'ID',
+                        className: "idHidden"
+                    },
+                    {
                         "data": "name"
                     },
                     {
@@ -271,9 +291,11 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                         "data": "prix"
                     },
                     {
-                        "render": function(data, type, row) {
-                            return '<button class="btn-show-first-column">Afficher</button>';
-                        }
+                        data: null,
+                        orderable: false,
+                        title: "Modifier le massage",
+                        "defaultContent": "<button class='btn-modificateur' onclick='buttonModif(($this))'>Modifier le maquillage</button>"
+
                     }
                     // Ajoutez d'autres colonnes si nécessaire
                 ]
@@ -284,6 +306,10 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                     "dataSrc": "" // Cela indique à DataTables que les données sont directement disponibles dans l'objet JSON
                 },
                 "columns": [{
+                        data: 'ID',
+                        className: "idHidden"
+                    },
+                    {
                         "data": "name"
                     },
                     {
@@ -293,9 +319,11 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                         "data": "prix"
                     },
                     {
-                        "render": function(data, type, row) {
-                            return '<button class="btn-show-first-column">Afficher</button>';
-                        }
+                        data: null,
+                        orderable: false,
+                        title: "Modifier le massage",
+                        "defaultContent": "<button class='btn-modificateur' onclick='buttonModif(($this))'>Modifier l'épilation</button>"
+
                     }
                     // Ajoutez d'autres colonnes si nécessaire
                 ]
@@ -306,6 +334,10 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                     "dataSrc": "" // Cela indique à DataTables que les données sont directement disponibles dans l'objet JSON
                 },
                 "columns": [{
+                        data: 'ID',
+                        className: "idHidden"
+                    },
+                    {
                         "data": "name"
                     },
                     {
@@ -315,9 +347,11 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                         "data": "prix"
                     },
                     {
-                        "render": function(data, type, row) {
-                            return '<button class="btn-show-first-column">Afficher</button>';
-                        }
+                        data: null,
+                        orderable: false,
+                        title: "Modifier le massage",
+                        "defaultContent": "<button class='btn-modificateur' onclick='buttonModif(($this))'>Modifier le soin du visage</button>"
+
                     }
                     // Ajoutez d'autres colonnes si nécessaire
                 ]
@@ -328,6 +362,10 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                     "dataSrc": "" // Cela indique à DataTables que les données sont directement disponibles dans l'objet JSON
                 },
                 "columns": [{
+                        data: 'ID',
+                        className: "idHidden"
+                    },
+                    {
                         "data": "name"
                     },
                     {
@@ -337,9 +375,11 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                         "data": "prix"
                     },
                     {
-                        "render": function(data, type, row) {
-                            return '<button class="btn-show-first-column">Afficher</button>';
-                        }
+                        data: null,
+                        orderable: false,
+                        title: "Modifier le massage",
+                        "defaultContent": "<button class='btn-modificateur' onclick='buttonModif(($this))'>Modifier l'ongle</button>"
+
                     }
                     // Ajoutez d'autres colonnes si nécessaire
                 ]
@@ -361,7 +401,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         //         table.style.display = "none";
         //     }
         // });
-    </script>
+    </script> -->
 </body>
 
 </html>
@@ -371,3 +411,5 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 <script src="../js/add_nail.js"></script>
 <script src="../js/add_hair_removal.js"></script>
 <script src="../js/add_partenair.js"></script>
+
+<script src="../js/tools.js"></script>
