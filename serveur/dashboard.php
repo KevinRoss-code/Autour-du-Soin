@@ -18,6 +18,8 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     <script src="https://code.jquery.com/jquery.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
     <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/dashboard.css" />
     <title>Dashboard</title>
 </head>
@@ -411,5 +413,5 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 <script src="../js/add_nail.js"></script>
 <script src="../js/add_hair_removal.js"></script>
 <script src="../js/add_partenair.js"></script>
-
+<script src="../js/show _datatable.js"></script>
 <script src="../js/tools.js"></script>
